@@ -1,0 +1,1138 @@
+@import url(https://fonts.googleapis.com/css2?family=Aldrich&display=swap);
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400&display=swap");
+:root {
+    --main-font: 'Aldrich', sans-serif;
+    --secondary-font: 'Orbitron', sans-serif;
+    --font-color: aliceblue;
+    --bg-color: linear-gradient(180deg, #1b1333 0%, #2c0055 50%);    --a-color: #461E52;
+    --btn-contact: linear-gradient(164deg, rgba(221,81,127,1) 0%, rgba(230,83,54,1) 45%, rgba(230,142,54,1) 74%);
+
+    --c-color: #DD517F;
+    --d-color: #E68E36;
+    --b-color: #556DC8;
+    --a-color: #7998EE;
+}
+
+
+/*     --font-color: aliceblue;
+    --bg-color: linear-gradient(180deg, #1b1333 0%, #2c0055 50%);    --a-color: #042A3D;
+    --b-color: #0B435B;
+    --c-color: #DAB679;
+    --d-color: #F4B734;
+    --e-color: #636E4B;
+    */
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+
+/*
+.profile,
+.profile-detail,
+.skills,
+.find-me,
+.contact-me,
+.work {
+  animation: 1s ease-out 0s 1 slideInFromBottom;
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        opacity: 0;
+        transform: translatey(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translatey(0);
+    }
+}
+*/
+.graph {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200vh;
+    background-repeat: repeat;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, .5) 0%, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px), linear-gradient(90deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px); 
+    background-size: 4em 2em, 4em 2em;
+    background-color: black;
+    height: 65em;
+    perspective: 200px;
+    margin-top: 40em;
+    transform: perspective(200px) rotateX(45deg) scale(2);
+    animation: bg-animation 2s ease-out;
+}
+
+@keyframes bg-animation {
+    0% { transform: perspective(0) rotateX(0) scale(0);}
+    
+    100% { transform: perspective(200px) rotateX(45deg) scale(2);}
+}
+
+
+
+body {
+    font-family: var(--main-font);
+    background: var(--bg-color);
+    color: var(--font-color);
+}
+
+.body {
+    position: relative;
+    width: 35%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    z-index: 10;
+    margin: auto;
+    margin-top: 3rem;
+    background: var(--bg-color);
+    animation: 1.5s ease-out 0s 1 shawodAnimate;
+}
+
+@keyframes shawodAnimate {
+    0% { transform: perspective(0) rotateX(0) scale(0);}
+
+}
+
+/* Profile */
+
+.profile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--secondary-font);
+}
+
+.sunset {
+    position: absolute;
+    top: 2%;
+    left: 30%;
+    width: 10vw;
+    z-index: 11;
+    animation: 2.5s ease-out sunsetSlide;
+}
+
+.sunset img {
+    width: 100%;
+}
+
+@keyframes sunsetSlide {
+    0% {
+        opacity: 0;
+        transform: translate(-10rem, 10rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+.profile .image {
+    width: 200px;
+    box-shadow: 0 0 0 1px inset rgba(236, 232, 225, 0.3);
+    border-radius: 5px;
+    padding: 8px;
+}
+
+.profile .name {
+    color: var(--d-color);
+    font-weight: 1 !important;
+}
+
+.profile .name span {
+    margin: 0%;
+    padding: 0;
+    font-size: 0.8rem;
+    float: right;
+    transform: translate(-4px, -7px);
+}
+
+.profile .image img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.profile .name p {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    margin: 0px;
+    margin-top: 2px;
+}
+
+
+/*   Details     */
+
+.profile-detail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.profile-detail h1 {
+    font-size: 3rem;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.profile-detail .left span {
+    font-size: 2rem;
+    font-weight: 1;
+}
+
+.profile-detail .left p {
+    margin: 0;
+    font-weight: normal;
+    letter-spacing: 5px;
+    font-size: 1rem;
+    color: var(--d-color);
+    font-family: var(--secondary-font);
+}
+
+.profile-detail .right p {
+    margin-bottom: 0;
+}
+
+
+/*   contact btn */
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}
+
+.contact-btn a {
+    width: 100%;
+    max-width: 240px;
+    height: 70px;
+    padding: 8px;
+    font-size: 0.8rem;
+    font-weight: 900;
+    color: #ff4655;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 0 0 1px inset rgba(236, 232, 225, 0.3);
+    position: relative;
+    margin: 10px 0;
+}
+
+.contact-btn a.white:hover>p {
+    color: #ece8e1;
+}
+
+.contact-btn a.white>p {
+    background: #ece8e1;
+    color: #0f1923;
+}
+
+.contact-btn a.white>p span.base {
+    border: 1px solid transparent;
+}
+
+.contact-btn a:after,
+.contact-btn a:before {
+    content: "";
+    width: 1px;
+    position: absolute;
+    height: 8px;
+    background: #0f1923;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.contact-btn a:before {
+    right: 0;
+    left: initial;
+}
+
+.contact-btn a p {
+    margin: 0;
+    height: 54px;
+    line-height: 54px;
+    box-sizing: border-box;
+    z-index: 1;
+    left: 0;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-btn a p span.base {
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    border: 1px solid #ff4655;
+}
+
+.contact-btn a p span.base:before {
+    content: "";
+    width: 2px;
+    height: 2px;
+    left: -1px;
+    top: -1px;
+    background: #0f1923;
+    position: absolute;
+    transition: 0.3s ease-out all;
+}
+
+.contact-btn a p span.bg {
+    left: -5%;
+    position: absolute;
+    background: var(--btn-contact);
+    width: 0;
+    height: 100%;
+    z-index: 3;
+    transition: 0.3s ease-out all;
+    transform: skewX(-10deg);
+}
+
+.contact-btn a p span.text {
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.contact-btn a p span.text:after {
+    content: "";
+    width: 4px;
+    height: 4px;
+    right: 0;
+    bottom: 0;
+    background: #0f1923;
+    position: absolute;
+    transition: 0.3s ease-out all;
+    z-index: 5;
+}
+
+.contact-btn a:hover {
+    color: #ece8e1;
+}
+
+.contact-btn a:hover span.bg {
+    width: 110%;
+    
+}
+
+.contact-btn a:hover span.text:after {
+    background: #ece8e1;
+}
+
+
+/*   Skills    */
+
+.skills {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.skills h1 {
+    color: var(--d-color);
+    font-size: 2rem;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 0rem;
+}
+
+.skills>p {
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.skills .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.skills .column p {
+    color: var(--c-color);
+    font-weight: 1;
+    font-size: .8rem;
+    letter-spacing: 5px;
+    padding-bottom: 0;
+    margin-bottom: 0.4rem;
+}
+
+.skills ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 0rem;
+}
+
+
+/*   Where to find me */
+
+.find-me h2 {
+    color: var(--d-color);
+    font-weight: 1;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.find-me .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.find-me .right::before {
+    display: block;
+    content: " ";
+    border-left: 2px solid var(--a-color);
+}
+.find-me .right, .find-me .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+
+}
+.find-me .left i{
+    font-size: 1.5rem;
+}
+
+.find-me .left a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.8rem;
+    padding-left: 1rem;
+}
+.find-me .right  {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.find-me .right i {
+    font-size: 1.5rem;
+    padding: 0;
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+.find-me .right a {
+    text-decoration: none;
+    color: white;
+}
+.find-me .right a:hover {
+    color: rgb(22, 41, 70);
+    transition: 0.5s;
+}
+
+.find-me .left a:hover {
+    color: rgb(22, 41, 70);
+    transition: 0.5s;
+}
+/*  Book a session   */
+
+.contact-me {
+    margin-top: 2rem;
+}
+
+.hide-contact {
+    display: none;
+}
+
+.left-to-right {
+    animation: 1s ease-out leftToright;
+}
+
+.right-to-left {
+    animation: 1s ease-out rightToleft;
+}
+
+
+@keyframes leftToright {
+    0% {
+        transform: translate(-20rem, 0);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+
+}
+
+@keyframes rightToleft {
+    0% {
+        transform: translate(20rem, 0);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+
+}
+
+
+
+.contact-me h1 {
+    color: var(--d-color);
+    font-weight: 1;
+    text-align: center;
+}
+
+.contact-me .box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contact-me input {
+    margin: 1rem 0;
+    background: transparent;
+    color: white;
+    padding: 1rem;
+    border: 3px solid var(--b-color);
+}
+
+.contact-me textarea {
+    margin: 1rem 0;
+    background: transparent;
+    border: 3px solid var(--b-color);
+    color: white;
+    padding: 1rem;
+    resize: none;
+}
+
+.contact-me textarea:focus,
+.contact-me input:focus {
+    outline: none;
+    border: 3px solid var(--e-color);
+    transition: 0.3s;
+}
+
+.contact-me input[type="text"],
+.contact-me input[type="email"] {
+    font-size: 17px;
+    font-family: var(--main-font);
+    font-weight: 1;
+}
+
+.contact-me .box span {
+    color: var(--d-color);
+}
+
+.contact-me .box button {
+    border: 3px solid var(--b-color);
+    background: transparent;
+    color: var(--font-color);
+    font-weight: bold;
+    padding: 1rem;
+    margin-top: 2rem;
+    cursor: pointer;
+    width: 50%;
+}
+
+.contact-me .box button:hover {
+    border: 3px solid var(--c-color);
+    color: var(--c-color);
+    letter-spacing: 5px;
+    transition: 0.5s;
+}
+
+
+/*    Wokr     */
+
+.work {
+    margin-top: 4rem;
+}
+
+.work h1 {
+    color: var(--d-color);
+    font-weight: 1;
+    text-align: center;
+}
+
+.work .choice {
+    text-align: center;
+}
+
+
+/*switch button*/
+
+.switch-button {
+    margin: auto;
+    width: 400px;
+    height: 40px;
+    text-align: center;
+    transform: translate3D(0%, -50%, 0);
+    will-change: transform;
+    z-index: 197 !important;
+    cursor: pointer;
+    transition: 0.3s ease all;
+    border: 1px solid white;
+    
+}
+
+.switch-button-case {
+    display: inline-block;
+    background: none;
+    width: 49%;
+    height: 100%;
+    color: white;
+    position: relative;
+    border: none;
+    transition: 0.3s ease all;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    padding-bottom: 1px;
+}
+
+.switch-button-case:hover {
+    color: grey;
+    cursor: pointer;
+}
+
+.switch-button-case:focus {
+    outline: none;
+}
+
+.switch-button .active {
+    color: #151515;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: -1;
+    transition: 0.3s ease-out all;
+}
+
+.switch-button .active-case {
+    color: #151515;
+}
+
+.signature {
+    position: fixed;
+    font-family: sans-serif;
+    font-weight: 100;
+    bottom: 10px;
+    left: 0;
+    letter-spacing: 4px;
+    font-size: 10px;
+    width: 100vw;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.work .wrapper {
+    overflow-x: hidden; 
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+
+.work .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.work .big-container {
+    display: flex;
+    width: 200%;
+}
+
+.container-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.container-left {
+    width: 100%;
+}
+
+.translate-left {
+    transform: translateX(0%);
+    transition: 0.5s;
+}
+
+.translate-right {
+    transform: translateX(-50%);
+    transition: 0.5s;
+}
+
+.work .container.left {
+    width: 98%;
+}
+
+.work .container.right {
+    width: 98%;
+}
+
+.container-hide {
+    display: none !important;
+}
+
+
+/*card*/
+
+.work .card {
+    border: 2px solid var(--b-color);
+    border-radius: 4px;
+    width: 45%;
+}
+
+.work .card .image,
+.work .card .details,
+.work .card .tags {
+    margin: auto 15px;
+}
+
+.work .card .image {
+    margin-top: 8px;
+    margin-bottom: .5rem;
+}
+
+.work .card .image img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.work .details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.work .details .title {
+    margin: 0;
+}
+
+.work .details .date {
+    margin-top: 2px;
+    font-weight: 1;
+    font-size: .8rem;
+}
+
+.work .tags {
+    display: flex;
+    flex-direction: row;
+    width: 240px;
+    flex-wrap: wrap;
+}
+
+.work .tags .tag {
+    font-size: 0.7rem;
+    background: coral;
+    margin-right: 5px;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.work .tags p {
+    margin: 0;
+}
+
+.work .check-detail {
+    margin-top: 1rem;
+}
+
+.work .check-detail button {
+    width: 100%;
+    border: none;
+    border-top: 2px solid var(--b-color);
+    padding: 0.7rem;
+    background: transparent;
+    cursor: pointer;
+    font-family: var(--main-font);
+    color: var(--a-color);
+}
+
+.work .check-detail button:hover {
+    border: 2px solid var(--d-color);
+    color: var(--font-color) im !important;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+
+.work .check-detail button:hover~.work .card {
+    border: 2px solid var(--a-color) ;
+}
+
+
+/*      Modal       */
+
+.modal-container {
+    display: flex;
+    text-align: left;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 50%;
+    max-width: 500px;
+    min-width: 320px;
+    z-index: 2000;
+    visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    perspective: 1300px;
+}
+
+.modal--show {
+    visibility: visible;
+}
+
+.modal--show~.overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal--show .modal__content {
+    transform: rotateX(0deg);
+    opacity: 1;
+    padding-bottom: 0;
+}
+
+.modal__content {
+    background: var(--bg-color);
+    color: white;
+    position: relative;
+    border-radius: 3px;
+    margin: 0 auto;
+    /* padding: 30px; */
+    padding-bottom: 25px;
+    border-radius: 6px;
+    box-shadow: 0 15px 100px -60px rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(250, 235, 215, 0.26);
+    transform-style: preserve-3d;
+    transform: rotateX(-60deg);
+    transform-origin: 50% 0;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.btn {
+    display: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.modal {
+    border: 2px solid var(--d-color);
+    border-radius: 4px;
+    width: 65%;
+    box-shadow: 0 15px 100px -60px rgba(0, 0, 0, 0.7);
+}
+
+.modal .image,
+.modal .details,
+.modal .tags,
+.modal .description {
+    margin: auto 15px;
+}
+
+.modal .image {
+    margin-top: 15px;
+}
+
+.modal .image img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.modal .dots {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    width: 10%;
+}
+
+.modal .details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.modal .details .title {
+    margin: 0;
+}
+
+.modal .details .date {
+    margin-top: 2px;
+    font-weight: 1;
+    font-size: .8rem;
+}
+
+.modal .tags {
+    display: flex;
+    width: 100%1;
+    flex-direction: row;
+}
+
+.modal .tags .tag {
+    font-size: 0.7rem;
+    background: coral;
+    margin-right: 5px;
+    padding: 2px 7px;
+    margin-top: 5px;
+    border-radius: 4px;
+}
+
+.modal .tags p {
+    margin: 0;
+}
+
+.modal .description {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.modal .visit {
+    margin-top: 1rem;
+}
+
+.modal .visit button {
+    color: white;
+    width: 100%;
+    border: none;
+    border-top: 2px solid var(--d-color);
+    padding: 0.7rem;
+    background: transparent;
+    cursor: pointer;
+}
+
+.modal .visit button:hover {
+    border: 2px solid var(--first-color);
+    color: var(--first-color);
+    border-top: 2px solid rgb(38, 128, 128);
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+
+.modal .visit button:hover~.work .card {
+    border: none;
+    border: 2px solid var(--first-color) !important;
+}
+
+.modal__content .image,
+.modal__content .dots,
+.modal__content .details,
+.modal__content .tags,
+.modal__content .description {
+    padding:0 30px;
+}
+
+
+/*   Jervi     */
+
+.jervi {
+    margin: auto;
+}
+
+main div {
+    position: relative;
+}
+
+main div p {
+    color: #000;
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-family: var(--secondary-font);
+    font-weight: 900;
+    letter-spacing: -1px;
+    padding: 2rem;
+    text-align: center;
+}
+
+main div p:before,
+main div p:after {
+    position: absolute;
+    content: attr(data-text);
+    padding: 2rem;
+    top: 0;
+    left: 50%;
+    color: #000;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+main div p:before {
+    left: 50%;
+    text-shadow: -3px 2px var(--d-color);
+    transform: translatex(-50%);
+    animation: glitch-1 3s ease-in reverse infinite;
+}
+
+main div p:after {
+    left: 50%;
+    text-shadow: -5px 2px #fff;
+    transform: translatex(-50%);
+    animation: glitch-2 3s ease-in-out reverse infinite;
+}
+
+@keyframes glitch-1 {
+    0% {
+        clip: rect(132px, auto, 101px, 30px);
+    }
+    5% {
+        clip: rect(17px, auto, 94px, 30px);
+    }
+    10% {
+        clip: rect(40px, auto, 66px, 30px);
+    }
+    15% {
+        clip: rect(87px, auto, 82px, 30px);
+    }
+    20% {
+        clip: rect(137px, auto, 61px, 30px);
+    }
+    25% {
+        clip: rect(34px, auto, 14px, 30px);
+    }
+    30% {
+        clip: rect(133px, auto, 74px, 30px);
+    }
+    35% {
+        clip: rect(76px, auto, 107px, 30px);
+    }
+    40% {
+        clip: rect(59px, auto, 130px, 30px);
+    }
+    45% {
+        clip: rect(29px, auto, 84px, 30px);
+    }
+    50% {
+        clip: rect(22px, auto, 67px, 30px);
+    }
+    55% {
+        clip: rect(67px, auto, 62px, 30px);
+    }
+    60% {
+        clip: rect(10px, auto, 105px, 30px);
+    }
+    65% {
+        clip: rect(78px, auto, 115px, 30px);
+    }
+    70% {
+        clip: rect(105px, auto, 13px, 30px);
+    }
+    75% {
+        clip: rect(15px, auto, 75px, 30px);
+    }
+    80% {
+        clip: rect(66px, auto, 39px, 30px);
+    }
+    85% {
+        clip: rect(133px, auto, 73px, 30px);
+    }
+    90% {
+        clip: rect(36px, auto, 128px, 30px);
+    }
+    95% {
+        clip: rect(68px, auto, 103px, 30px);
+    }
+    100% {
+        clip: rect(14px, auto, 100px, 30px);
+    }
+}
+
+@keyframes glitch-2 {
+    0% {
+        clip: rect(129px, auto, 36px, 30px);
+    }
+    5% {
+        clip: rect(36px, auto, 4px, 30px);
+    }
+    10% {
+        clip: rect(85px, auto, 66px, 30px);
+    }
+    15% {
+        clip: rect(91px, auto, 91px, 30px);
+    }
+    20% {
+        clip: rect(148px, auto, 138px, 30px);
+    }
+    25% {
+        clip: rect(38px, auto, 122px, 30px);
+    }
+    30% {
+        clip: rect(69px, auto, 54px, 30px);
+    }
+    35% {
+        clip: rect(98px, auto, 71px, 30px);
+    }
+    40% {
+        clip: rect(146px, auto, 34px, 30px);
+    }
+    45% {
+        clip: rect(134px, auto, 43px, 30px);
+    }
+    50% {
+        clip: rect(102px, auto, 80px, 30px);
+    }
+    55% {
+        clip: rect(119px, auto, 44px, 30px);
+    }
+    60% {
+        clip: rect(106px, auto, 99px, 30px);
+    }
+    65% {
+        clip: rect(141px, auto, 74px, 30px);
+    }
+    70% {
+        clip: rect(20px, auto, 78px, 30px);
+    }
+    75% {
+        clip: rect(133px, auto, 79px, 30px);
+    }
+    80% {
+        clip: rect(78px, auto, 52px, 30px);
+    }
+    85% {
+        clip: rect(35px, auto, 39px, 30px);
+    }
+    90% {
+        clip: rect(67px, auto, 70px, 30px);
+    }
+    95% {
+        clip: rect(71px, auto, 103px, 30px);
+    }
+    100% {
+        clip: rect(83px, auto, 40px, 30px);
+    }
+}

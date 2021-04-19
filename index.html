@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+    <title>Jervi</title>
+</head>
+
+<body>
+    <div class="graph"></div>
+    
+    <div class="sunset">
+        <img src="./sunset.gif" alt="">
+    </div>
+    <div class="body" id="animationOnload">
+        <!-- Profile -->
+        <div class="profile">
+
+            <div class="image">
+                <img src="./1.png">
+            </div>
+            <div class="name">
+                <p>Gacem</p>
+                <span>aka Jervi</span>
+            </div>
+        </div>
+
+        <!--  Details  -->
+        <div class="profile-detail">
+            <div class="left">
+                <h1>Hi, <span>I'm Gacem</span> </h1>
+                <p>a Web Developper</p>
+                <p>& Video Creator</p>
+            </div>
+            <div class="right">
+                <p>Describe your project idea</p>
+                <div class="contact-btn">
+                    <a class="white" href="#contactMe" onclick="contact()">
+                        <p><span class="bg"></span><span class="base"></span><span class="text">Contact me...</span></p>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <!--  Skills   -->
+        <div class="skills">
+            <h1>SKILLs and Techs provided</h1>
+            <p>For now, only value I provided is by turning your business idea into website,<br> from e-commerce or more complicated to simple one as one page site</p>
+            <div class="container">
+                <div class="column">
+                    <p>In use</p>
+                    <ul>
+                        <li>Laravel</li>
+                        <li>React</li>
+                        <li>VueJs</li>
+                        <li>MySql</li>
+                        <li>CSS</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <p>side used</p>
+                    <ul>
+                        <li>Git</li>
+                        <li>Figma</li>
+                        <li>Arduino</li>
+                        <li>Android</li>
+                        <li>Premier Pro</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <p>In learning</p>
+                    <ul>
+                        <li>React Native</li>
+                        <li>Network 2s</li>
+                        <li>Ui / Ux</li>
+                        <li>WebRTC</li>
+                        <li>GSAP</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--  Where To find me   -->
+        <div class="find-me">
+            <h2>Where to find me</h2>
+            <div class="container">
+                
+                <div class="left">
+                    <div class="row-find">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <a href="tel:+213558054300">(+213) 558 05 43 00</a>
+                    </div>
+                    <div class="row-find">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <a href="tel:+213558054300">gacembekhira.personal@gmail.com</a>
+                    </div>
+                </div>
+                <div class="right">
+                        <a href=""><i class="fa fa-github icon" aria-hidden="true"></i></a>
+                        <a href=""><i class="fa fa-facebook icon" aria-hidden="true"></i></a>
+                        <a href=""><i class="fa fa-youtube icon" aria-hidden="true"></i></a>
+                        <a href=""><i class="fa fa-instagram icon" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!--  Book a session  -->
+        <div class="contact-me hide-contact" id="contactMe">
+            <h1>Book a session </h1>
+            <form action="" id="form-contact">
+                <div class="box">
+                    <label for="email">Enter Your Email Address</label>
+                    <input type="email" class="input-box">
+                </div>
+                <div class="box">
+                    <label for="subject">Lemme know your name <span>( optional )</span> </label>
+                    <input type="text" class="input-box">
+                </div>
+                <div class="box">
+                    <label for="email">Your Enquiry</label>
+                    <textarea name="message" id="" cols="30" rows="10"></textarea>
+                </div>
+                <div class="box">
+                    <button>Submit</button>
+                </div>
+
+            </form>
+        </div>
+
+
+        <!--  My Works  -->
+        <div class="work">
+            <h1>Collection </h1>
+
+            <div class="switch-button"><span class="active"></span>
+                <button class="switch-button-case left active-case">Made</button>
+                <button class="switch-button-case right">In process</button>
+            </div>
+            <div class="wrapper">
+                <div class="big-container" id="move-container">
+                    <div id="container-left" class="container left">
+                        <div class="card">
+                            <div class="image">
+                                <img src="https://fakeimg.pl/200x100/?text=Hello" alt="">
+                            </div>
+                            <div class="details">
+                                <div class="left">
+                                    <p class="title">Tir - travel Agency</p>
+                                    <p class="date">2020 - October</p>
+                                </div>
+                                <div class="right">
+                                    <img src="https://fakeimg.pl/50x50/?text=Lego" alt="">
+                                </div>
+                            </div>
+                            <div class="tags">
+                                <div class="tag">
+                                    <p>Laravel</p>
+                                </div>
+                                <div class="tag">
+                                    <p>Stripe</p>
+                                </div>
+                                <div class="tag">
+                                    <p>MySql</p>
+                                </div>
+                                <div class="tag">
+                                    <p>Bootstrap</p>
+                                </div>
+                            </div>
+                            <div class="btn--open check-detail">
+                                <button>Check for more detail</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="image">
+                                <img src="https://fakeimg.pl/200x100/?text=Hello" alt="">
+                            </div>
+                            <div class="details">
+                                <div class="left">
+                                    <p class="title">Tir - travel Agency</p>
+                                    <p class="date">2020 - October</p>
+                                </div>
+                                <div class="right">
+                                    <img src="https://fakeimg.pl/50x50/?text=Lego" alt="">
+                                </div>
+                            </div>
+                            <div class="tags">
+                                <div class="tag">
+                                    <p>Laravel</p>
+                                </div>
+                                <div class="tag">
+                                    <p>Stripe</p>
+                                </div>
+                                <div class="tag">
+                                    <p>MySql</p>
+                                </div>
+                                <div class="tag">
+                                    <p>Bootstrap</p>
+                                </div>
+                            </div>
+                            <div class="check-detail">
+                                <button>Check for more detail</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="container-right " class="container right ">
+                        <div class="card">
+                            <div class="image">
+                                <img src="https://fakeimg.pl/200x100/?text=Hello" alt="">
+                            </div>
+                            <div class="details">
+                                <div class="left">
+                                    <p class="title">Tir - travel Agency</p>
+                                    <p class="date">2020 - October</p>
+                                </div>
+                                <div class="right">
+                                    <img src="https://fakeimg.pl/50x50/?text=Lego" alt="">
+                                </div>
+                            </div>
+                            <div class="tags">
+                                <div class="tag">
+                                    <p>Laravel</p>
+                                </div>
+                                <div class="tag">
+                                    <p>Stripe</p>
+                                </div>
+                                <div class="tag">
+                                    <p>MySql</p>
+                                </div>
+                                <div class="tag">
+                                    <p>Bootstrap</p>
+                                </div>
+                            </div>
+                            <div class="check-detail">
+                                <button>Check for more detail</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="image">
+                                <img src="https://fakeimg.pl/200x100/?text=Hello" alt="">
+                            </div>
+                            <div class="details">
+                                <div class="left">
+                                    <p class="title">Tir - travel Agency</p>
+                                    <p class="date">2020 - October</p>
+                                </div>
+                                <div class="right">
+                                    <img src="https://fakeimg.pl/50x50/?text=Lego" alt="">
+                                </div>
+                            </div>
+                            <div class="tags">
+                                <div class="tag">
+                                    <p>Laravel</p>
+                                </div>
+                                <div class="tag">
+                                    <p>Stripe</p>
+                                </div>
+                                <div class="tag">
+                                    <p>MySql</p>
+                                </div>
+                                <div class="tag">
+                                    <p>Bootstrap</p>
+                                </div>
+                            </div>
+                            <div class="check-detail">
+                                <button>Check for more detail</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal   -->
+        <div class="modal-container">
+            <div class="modal">
+                <div class="modal__content">
+                    <div class="image">
+                        <img src="https://fakeimg.pl/200x100/?text=Hello" alt="">
+                    </div>
+                    <div class="dots">
+                        <span>.</span>
+                        <span>.</span>
+                        <span>.</span>
+                    </div>
+                    <div class="details">
+                        <div class="left">
+                            <p class="title">Tir - travel Agency</p>
+                            <p class="date">2020 - October</p>
+                        </div>
+                        <div class="right">
+                            <img src="https://fakeimg.pl/50x50/?text=Hello" alt="">
+                        </div>
+                    </div>
+                    <div class="tags">
+                        <div class="tag">Laravel</div>
+                        <div class="tag">Stripe</div>
+                        <div class="tag">Mysql</div>
+                        <div class="tag">Bootstrap</div>
+                    </div>
+                    <div class="description">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam fugiat quisquam eaque accusantium libero adipisci quia cupiditate tempora rerum quas odio ex et sapiente, quis sequi dolor temporibus minus commodi.
+                    </div>
+
+                    <div class="visit">
+                        <button>Vist</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="overlay"></div>
+            <button class="btn btn--open">Open</button>
+        </div>
+        
+        <!--  Some About Me   -->
+        Video production, figma ui, Logo, Arduibno diy, Calistenic,
+
+
+        <div class="jervi">
+            <main>
+                <div>
+                    <p data-text="Jervi">Jervi</p>
+                </div>
+            </main>
+        </div>
+
+    </div>
+    
+    <script>
+        'use strict';
+
+        var switchButton = document.querySelector('.switch-button');
+        var switchBtnRight = document.querySelector('.switch-button-case.right');
+        var switchBtnLeft = document.querySelector('.switch-button-case.left');
+        var activeSwitch = document.querySelector('.active');
+        var container = document.getElementById("move-container");
+        var cLeft = document.getElementById("container-left");
+        var cRight = document.getElementById("container-right");
+
+
+        function switchLeft() {
+            switchBtnRight.classList.remove('active-case');
+            switchBtnLeft.classList.add('active-case');
+            activeSwitch.style.left = '0%';
+            container.classList.remove("translate-right");
+            container.classList.add("translate-left");
+
+            cRight.classList.remove("container-hide");
+            cLeft.classList.add("container-hide");
+
+
+        }
+
+        function switchRight() {
+            switchBtnRight.classList.add('active-case');
+            switchBtnLeft.classList.remove('active-case');
+            activeSwitch.style.left = '50%';
+            container.classList.remove("translate-left");
+            container.classList.add("translate-right");
+
+            cRight.classList.add("container-hide");
+            cLeft.classList.remove("container-hide");
+
+        }
+
+        switchBtnLeft.addEventListener('click', function() {
+            switchLeft();
+        }, false);
+
+        switchBtnRight.addEventListener('click', function() {
+            switchRight();
+        }, false);
+    </script>
+    <script>
+        var modal = document.querySelector('.modal');
+        var open = document.querySelector('.btn--open');
+        var close = document.querySelector('.btn--close, .overlay');
+
+
+
+        function openModal() {
+            modal.classList.add('modal--show');
+
+        }
+
+        function closeModal() {
+            modal.classList.remove('modal--show');
+
+        }
+
+        open.addEventListener('click', function() {
+            openModal();
+        }, false);
+
+        close.addEventListener('click', function() {
+            closeModal();
+        }, false);
+    </script>
+    <script>
+        function contact() {
+            var contact = document.getElementById("contactMe");
+            contact.classList.remove("hide-contact");
+            contact.classList.add("show-contact");  
+
+            var contactForm = document.getElementById("form-contact").children;
+
+            for(var i = 0; i < contactForm.length; i+=2)
+            {   
+                var temp = contactForm[i];
+                var temp1 = contactForm[i+1];
+                
+                temp.classList.add('right-to-left');
+                temp1.classList.add('left-to-right');
+
+            }
+        }
+            
+    </script>
+</body>
+
+</html>
