@@ -101,14 +101,14 @@
                     </div>
                     <div class="row-find">
                         <i class="fa fa-envelope" aria-hidden="true"></i>
-                        <a href="tel:+213558054300">gacembekhira.personal@gmail.com</a>
+                        <a href="mailto:gacembekhira.personal@gmail.com">gacembekhira.personal@gmail.com</a>
                     </div>
                 </div>
                 <div class="right">
-                    <a href=""><i class="fa fa-github icon" aria-hidden="true"></i></a>
-                    <a href=""><i class="fa fa-facebook icon" aria-hidden="true"></i></a>
-                    <a href=""><i class="fa fa-youtube icon" aria-hidden="true"></i></a>
-                    <a href=""><i class="fa fa-instagram icon" aria-hidden="true"></i></a>
+                    <a href="https://github.com/Jervi-sir" target="_blanc"><i class="fa fa-github icon" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/gacem.humen/" target="_blanc"><i class="fa fa-facebook icon" aria-hidden="true"></i></a>
+                    <a href="https://www.youtube.com/channel/UCD-YOxxLv5yGhcerkZLGZgg" target="_blanc"><i class="fa fa-youtube icon" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/gacem_humen/" target="_blanc"><i class="fa fa-instagram icon" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
@@ -117,6 +117,17 @@
         <div class="contact-me hide-contact" id="contactMe">
             <h1>Book a session </h1>
             <form action="" id="form-contact">
+                <div class="box">
+                    <h1>for now,</h1>
+                    <h1>contact me throught social or email</h1>
+                    <div class="socials">
+                        <a href="tel:+213558054300"><i class="fa fa-phone" aria-hidden="true"></i>(+213) 558 05 43 00</a>
+                        <a href="mailto:gacembekhira.personal@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i>gacembekhira.personal@gmail.com</a>
+                        <a href="https://www.facebook.com/gacem.humen/" target="_blanc"><i class="fa fa-facebook icon" aria-hidden="true"></i>acebook</a>
+                </div>
+                    <p>this contact form is in process built,<br> maybe with react or laravel, i havent choosen yet</p>
+                </div>
+
                 <div class="box">
                     <label for="email">Enter Your Email Address</label>
                     <input type="email" class="input-box">
@@ -149,258 +160,277 @@
                 <div class="big-container" id="move-container">
                     <div id="container-left" class="container left">
                         <div class="card">
-                            <div class="image">
-                                <img src="./works/tir/tir1_result.png" alt="">
-                            </div>
-                            <div class="details">
-                                <div class="left">
-                                    <p class="title">Tir - travel Agency</p>
-                                    <p class="date">2020 - October</p>
+                            <div class="top">
+                                <div class="image">
+                                    <img src="./works/tir/tir1_result.png" alt="">
                                 </div>
+                                <div class="details">
+                                    <div class="left">
+                                        <p class="title">Tir - travel Agency</p>
+                                        <p class="date">2020 - October</p>
+                                    </div>
 
-                            </div>
-                            <div class="tags">
-                                <div class="tag">
-                                    <p>Laravel</p>
                                 </div>
-                                <div class="tag">
-                                    <p>Stripe</p>
+                                <div class="tags">
+                                    <div class="tag">
+                                        <p>Laravel</p>
+                                    </div>
+                                    <div class="tag">
+                                        <p>Stripe</p>
+                                    </div>
+                                    <div class="tag">
+                                        <p>MySql</p>
+                                    </div>
+                                    <div class="tag">
+                                        <p>Bootstrap</p>
+                                    </div>
+                                    <div class="tag">
+                                        <p>mail</p>
+                                    </div>
+                                    <div class="tag">
+                                        <p>cart</p>
+                                    </div>
                                 </div>
-                                <div class="tag">
-                                    <p>MySql</p>
-                                </div>
-                                <div class="tag">
-                                    <p>Bootstrap</p>
-                                </div>
-                                <div class="tag">
-                                    <p>mail</p>
-                                </div>
-                                <div class="tag">
-                                    <p>cart</p>
-                                </div>
-                            </div>
+                        </div>
                             <div class="btn--open check-detail">
-                                <button nth-card="1" onclick="openModal()">Check for more detail</button>
+                                <button nth-card="0" onclick="openMadeModal(this)">Check for more details</button>
                             </div>
                         </div>
                         <div class="card">
-                            <div class="image">
-                                <img src="./works/tir/tir admin 1_result.png" alt="">
-                            </div>
-                            <div class="details">
-                                <div class="left">
-                                    <p class="title">Tir - Admin side</p>
-                                    <p class="date">2020 - October</p>
+                            <div class="top">
+                                <div class="image">
+                                    <img src="./works/tir/tir admin 1_result.png" alt="">
                                 </div>
-                            </div>
-                            <div class="tags">
-                                <div class="tag">
-                                    <p>Laravel</p>
+                                <div class="details">
+                                    <div class="left">
+                                        <p class="title">Tir - Admin side</p>
+                                        <p class="date">2020 - October</p>
+                                    </div>
                                 </div>
-                                <div class="tag">
-                                    <p>MySql</p>
-                                </div>
-                                <div class="tag">
-                                    <p>Bootstrap</p>
+                                <div class="tags">
+                                    <div class="tag">
+                                        <p>Laravel</p>
+                                    </div>
+                                    <div class="tag">
+                                        <p>MySql</p>
+                                    </div>
+                                    <div class="tag">
+                                        <p>Bootstrap</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="check-detail">
-                                <button>Check for more detail</button>
+                                <button nth-card="1" onclick="openMadeModal(this)" >Check for more details</button>
                             </div>
                         </div>
                         <div class="card">
-                            <div class="image">
-                                <img src="./works/saav/saav1_result.png" alt="">
-                            </div>
-                            <div class="details">
-                                <div class="left">
-                                    <p class="title">SaavyWorld-official</p>
-                                    <p class="date">2020 - October</p>
+                            <div class="top">
+                                <div class="image">
+                                    <img src="./works/saav/saav1_result.png" alt="">
                                 </div>
-                            </div>
-                            <div class="tags">
-                                <div class="tag">
-                                    <p>Laravel</p>
+                                <div class="details">
+                                    <div class="left">
+                                        <p class="title">SaavyWorld-official</p>
+                                        <p class="date">2020 - October</p>
+                                    </div>
                                 </div>
-                                <div class="tag">
-                                    <p>MailChimp</p>
-                                </div>
-                                <div class="tag">
-                                    <p>Bootstrap</p>
-                                </div>
-                                <div class="tag">
-                                    <p>Hosted</p>
+                                <div class="tags">
+                                    <div class="tag">
+                                        <p>Laravel</p>
+                                    </div>
+                                    <div class="tag">
+                                        <p>MailChimp</p>
+                                    </div>
+                                    <div class="tag">
+                                        <p>Bootstrap</p>
+                                    </div>
+                                    <div class="tag">
+                                        <p>Hosted</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="check-detail">
-                                <button>Check for more detail</button>
+                                <button nth-card="2" onclick="openMadeModal(this)">Check for more details</button>
                             </div>
                         </div>
                         <div class="card">
-                            <div class="image">
-                                <img src="./works/portfolio/jervi2_result.png" alt="">
-                            </div>
-                            <div class="details">
-                                <div class="left">
-                                    <p class="title">Jervi --</p>
-                                    <p class="date">2021 - March</p>
+                            <div class="top">
+                                <div class="image">
+                                    <img src="./works/portfolio/jervi2_result.png" alt="">
                                 </div>
-                            </div>
-                            <div class="tags">
-                                <div class="tag">
-                                    <p>pure</p>
+                                <div class="details">
+                                    <div class="left">
+                                        <p class="title">Jervi --</p>
+                                        <p class="date">2021 - March</p>
+                                    </div>
                                 </div>
-                                <div class="tag">
-                                    <p>css</p>
-                                </div>
-                                <div class="tag">
-                                    <p>js</p>
+                                <div class="tags">
+                                    <div class="tag">
+                                        <p>pure</p>
+                                    </div>
+                                    <div class="tag">
+                                        <p>css</p>
+                                    </div>
+                                    <div class="tag">
+                                        <p>js</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="check-detail">
-                                <button>Check for more detail</button>
+                                <button nth-card="3" onclick="openMadeModal(this)">Check for more details</button>
                             </div>
                         </div>
                         <div class="card">
-                            <div class="image">
-                                <img src="./works/zoom/zoom.png" alt="">
-                            </div>
-                            <div class="details">
-                                <div class="left">
-                                    <p class="title">Zoom Clone</p>
-                                    <p class="date">2021 - March</p>
+                            <div class="top">
+                                <div class="image">
+                                    <img src="./works/zoom/zoom.png" alt="">
                                 </div>
-                            </div>
-                            <div class="tags">
-                                <div class="tag">
-                                    <p>NodeJs</p>
+                                <div class="details">
+                                    <div class="left">
+                                        <p class="title">Zoom Clone</p>
+                                        <p class="date">2021 - March</p>
+                                    </div>
                                 </div>
-                                <div class="tag">
-                                    <p>P2P</p>
+                                <div class="tags">
+                                    <div class="tag">
+                                        <p>NodeJs</p>
+                                    </div>
+                                    <div class="tag">
+                                        <p>P2P</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="check-detail">
-                                <button>Check for more detail</button>
+                                <button nth-card="4" onclick="openMadeModal(this)">Check for more details</button>
                             </div>
                         </div>
-
                     </div>
 
-                    <div id="container-right " class="container right ">
+                    <div id="container-right" class="container right ">
                         <div class="card">
-                            <div class="image">
-                                <img src="./works/portfolio/jerviV2_result.png" alt="">
-                            </div>
-                            <div class="details">
-                                <div class="left">
-                                    <p class="title">Current Portfolio </p>
-                                    <p class="date">2021 - April</p>
+                            <div class="top">
+                                <div class="image">
+                                    <img src="./works/portfolio/jerviV2_result.png" alt="">
                                 </div>
-                            </div>
-                            <div class="tags">
-                                <div class="tag">
-                                    <p>Pure</p>
+                                <div class="details">
+                                    <div class="left">
+                                        <p class="title">Current Portfolio </p>
+                                        <p class="date">2021 - April</p>
+                                    </div>
                                 </div>
-                                <div class="tag">
-                                    <p>Mail</p>
-                                </div>
-                                <div class="tag">
-                                    <p>Css</p>
+                                <div class="tags">
+                                    <div class="tag">
+                                        <p>Pure</p>
+                                    </div>
+                                    <div class="tag">
+                                        <p>Mail</p>
+                                    </div>
+                                    <div class="tag">
+                                        <p>Css</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="check-detail">
-                                <button>Check for more detail</button>
+                                <button nth-card="0" onclick="openProcessModal(this)">Check for more details</button>
                             </div>
                         </div>
                         <div class="card">
-                            <div class="image">
-                                <img src="./works/portfolio/portfolio1_result.png" alt="">
-                            </div>
-                            <div class="details">
-                                <div class="left">
-                                    <p class="title">Porfolio for sofware dev</p>
-                                    <p class="date">2021 - March</p>
+                            <div class="top">
+                                <div class="image">
+                                    <img src="./works/portfolio/portfolio1_result.png" alt="">
                                 </div>
-                            </div>
-                            <div class="tags">
-                                <div class="tag">
-                                    <p>React</p>
+                                <div class="details">
+                                    <div class="left">
+                                        <p class="title">Porfolio for sofware dev</p>
+                                        <p class="date">2021 - March</p>
+                                    </div>
+                                </div>
+                                <div class="tags">
+                                    <div class="tag">
+                                        <p>React</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="check-detail">
-                                <button>Check for more detail</button>
+                                <button nth-card="1" onclick="openProcessModal(this)">Check for more details</button>
                             </div>
                         </div>
                         <div class="card">
-                            <div class="image">
-                                <img src="./works/devchallenges/res.png" alt="">
-                            </div>
-                            <div class="details">
-                                <div class="left">
-                                    <p class="title">Collection of 60 webpages</p>
-                                    <p class="date">2021 - january</p>
+                            <div class="top">
+                                <div class="image">
+                                    <img src="./works/devchallenges/res.png" alt="">
                                 </div>
-                            </div>
-                            <div class="tags">
-                                <div class="tag">
-                                    <p>Depends on the challenge</p>
+                                <div class="details">
+                                    <div class="left">
+                                        <p class="title">Collection of 60 webpages</p>
+                                        <p class="date">2021 - january</p>
+                                    </div>
+                                </div>
+                                <div class="tags">
+                                    <div class="tag">
+                                        <p>Depends on the challenge</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="check-detail">
-                                <button>Check for more detail</button>
+                                <button nth-card="2" onclick="openProcessModal(this)">Check for more details</button>
                             </div>
                         </div>
                         <div class="card">
-                            <div class="image">
-                                <img src="./works/inProcess/catApp.png" alt="">
-                            </div>
-                            <div class="details">
-                                <div class="left">
-                                    <p class="title">cat App with a plot twist</p>
-                                    <p class="date">InProcess__</p>
+                            <div class="top">
+                                <div class="image">
+                                    <img src="./works/inProcess/catApp.png" alt="">
                                 </div>
-                            </div>
-                            <div class="tags">
-                                <div class="tag">
-                                    <p>React Native</p>
+                                <div class="details">
+                                    <div class="left">
+                                        <p class="title">cat App with a plot twist</p>
+                                        <p class="date">InProcess__</p>
+                                    </div>
                                 </div>
-                                <div class="tag">
-                                    <p>Flutter</p>
-                                </div>
-                                <div class="tag">
-                                    <p>Android</p>
-                                </div>
-                                <div class="tag">
-                                    <p>GraphQL</p>
+                                <div class="tags">
+                                    <div class="tag">
+                                        <p>React Native</p>
+                                    </div>
+                                    <div class="tag">
+                                        <p>Flutter</p>
+                                    </div>
+                                    <div class="tag">
+                                        <p>Android</p>
+                                    </div>
+                                    <div class="tag">
+                                        <p>GraphQL</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="check-detail">
-                                <button>Check for more detail</button>
+                                <button nth-card="3" onclick="openProcessModal(this)">Check for more details</button>
                             </div>
                         </div>
                         <div class="card">
-                            <div class="image">
-                                <img src="./works/inProcess/taxi.png" alt="">
-                            </div>
-                            <div class="details">
-                                <div class="left">
-                                    <p class="title">Taxi Trip Organizer Covid</p>
-                                    <p class="date">Canceled__</p>
+                            <div class="top">
+                                <div class="image">
+                                    <img src="./works/inProcess/taxi.png" alt="">
                                 </div>
-                            </div>
-                            <div class="tags">
-                                <div class="tag">
-                                    <p>Laravel Api</p>
+                                <div class="details">
+                                    <div class="left">
+                                        <p class="title">Taxi Trip Organizer Covid</p>
+                                        <p class="date">Canceled__</p>
+                                    </div>
                                 </div>
-                                <div class="tag">
-                                    <p>Ai PHP</p>
-                                </div>
-                                <div class="tag">
-                                    <p>Native</p>
+                                <div class="tags">
+                                    <div class="tag">
+                                        <p>Laravel Api</p>
+                                    </div>
+                                    <div class="tag">
+                                        <p>Ai PHP</p>
+                                    </div>
+                                    <div class="tag">
+                                        <p>Native</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="check-detail">
-                                <button>Check for more detail</button>
+                                <button nth-card="4" onclick="openProcessModal(this)">Check for more details</button>
                             </div>
                         </div>
                     </div>
@@ -408,9 +438,29 @@
                 </div>
             </div>
         </div>
+        
+        <div class="side-work">
+            <h3>due to my need for some money to maintain my setup</h3>
+            <h4>I tried freelancer, as a logo and template designer</h4>
+            <div class="button">
+                <button class=".side-work" onclick="OpenSideWork()"><span>OPEN</span></button>
+            </div>
+            
+
+        </div>
+        <div class="jervi">
+            <main>
+                <div>
+                    <p data-text="Jervi">Jervi</p>
+                </div>
+            </main>
+        </div>
+
+
         <!-- Modal   -->
+        
         <div class="modal-container">
-            <div class="modal">
+            <div class="modal modal-left">
                 <div class="modal__content">
                     <div class="image">
                         <img src="./works/tir/tir1_result.png" alt="">
@@ -466,17 +516,19 @@
                     </div>
 
                     <div class="visit">
-                        <a href="http://quiet-savannah-26910.herokuapp.com/" target="_blank"><button></button>Visit </button></a>
+                        <a href="http://quiet-savannah-26910.herokuapp.com/" target="_blank">
+                            <button >Visit </button>
+                        </a>
                     </div>
 
                 </div>
             </div>
-            <div class="overlay"></div>
-            <button class="btn btn--open">Open</button>
+            <div class="overlay" nth-modal="0" onclick="closeMadeModal(this)"></div>
+             <button class="btn btn--open">Open</button>
         </div>
 
         <div class="modal-container">
-            <div class="modal">
+            <div class="modal modal-left">
                 <div class="modal__content">
                     <div class="image">
                         <img src="./works/tir/tir admin 1_result.png" alt="">
@@ -517,35 +569,34 @@
                         Organizing agency Offers, and Providing a structured control to the database
                         <br> you can access this section as admin, or as worker
                         <br> as Admin::
-                        <br> email: admin@admin.com
-                        <br> psswd: password
+                        
                         <br> you are able to
                         <ul>
                             <li>Add, Edit, Delete, View data</li>
                             <li>Receive emails for Omra procedure</li>
                             <li>adding Users (admin required)</li>
                             <li>View Analetics</li>
-                            <li></li>
                         </ul>
-                        To pay for an offre enter Stipe's code : 4242424242424242424242
+                        <br> 
+                        <p class="red" style="color:tomato">email: admin@admin.com</p>
+                        <p class="red" style="color:tomato">psswd: password</p>
                     </div>
 
                     <div class="visit">
-                        <a href="http://quiet-savannah-26910.herokuapp.com/" target="_blank"><button></button>Visit </button></a>
+                        <a href="https://quiet-savannah-26910.herokuapp.com/login" target="_blank"><button>Visit </button></a>
                     </div>
 
                 </div>
             </div>
-            <div class="overlay"></div>
+            <div class="overlay" nth-modal="1" onclick="closeMadeModal(this)"></div>
             <button class="btn btn--open">Open</button>
         </div>
 
-
         <div class="modal-container">
-            <div class="modal">
+            <div class="modal modal-left">
                 <div class="modal__content">
                     <div class="image">
-                        <img src="./works/tir/tir admin 1_result.png" alt="">
+                        <img src="./works/saav/saav1_result.png" alt="">
                     </div>
                     <div class="dots">
                         <span>.</span>
@@ -587,17 +638,17 @@
                     </div>
 
                     <div class="visit">
-                        <a href="https://www.saavyworld.com/" target="_blank"><button></button>Visit </button></a>
+                        <a href="https://www.saavyworld.com/" target="_blank"><button>Visit </button></a>
                     </div>
 
                 </div>
             </div>
-            <div class="overlay"></div>
+            <div class="overlay" nth-modal="2" onclick="closeMadeModal(this)"></div>
             <button class="btn btn--open">Open</button>
         </div>
 
         <div class="modal-container">
-            <div class="modal">
+            <div class="modal modal-left">
                 <div class="modal__content">
                     <div class="image">
                         <img src="./works/portfolio/jervi_result.png" alt="">
@@ -632,18 +683,17 @@
                     </div>
 
                     <div class="visit">
-                        <a href="https://www.jervi.netlify.com/" target="_blank"><button></button>Visit </button></a>
+                        <a href="https://jervi.netlify.app/" target="_blank"><button>Visit </button></a>
                     </div>
 
                 </div>
             </div>
-            <div class="overlay"></div>
+            <div class="overlay" nth-modal="3" onclick="closeMadeModal(this)"></div>
             <button class="btn btn--open">Open</button>
         </div>
 
-
         <div class="modal-container">
-            <div class="modal">
+            <div class="modal modal-left">
                 <div class="modal__content">
                     <div class="image">
                         <img src="./works/zoom/zoom.png" alt="">
@@ -674,17 +724,21 @@
                     </div>
 
                     <div class="visit">
-                        <a href="" target="_blank"><button disabled></button>Visit </button></a>
+                        <a>
+                            <button id="shake-btn" class="disabled" onclick="shake()">
+                                <span class="default btn-caption">Visit</span><span class="error btn-caption">in Fixing bugs - sorry -</span>
+                            </button></div>
+                        </a>
                     </div>
-
-                </div>
             </div>
-            <div class="overlay"></div>
+            <div class="overlay" nth-modal="4" onclick="closeMadeModal(this)"></div>
             <button class="btn btn--open">Open</button>
         </div>
 
+
+
         <div class="modal-container">
-            <div class="modal">
+            <div class="modal modal-right">
                 <div class="modal__content">
                     <div class="image">
                         <img src="./works/portfolio/jerviV2_result.png" alt="">
@@ -724,17 +778,19 @@
                     </div>
 
                     <div class="visit">
-                        <a href="https://www.gacem.netlify.com/" target="_blank"><button></button>Visit </button></a>
+                        <a href="https://gacem.netlify.app/" target="_blank"><button>Visit</button></a>
                     </div>
-
+                    <script>
+                        
+                    </script>
                 </div>
             </div>
-            <div class="overlay"></div>
+            <div class="overlay" nth-modal="0" onclick="closeProcessModal(this)"></div>
             <button class="btn btn--open">Open</button>
         </div>
 
         <div class="modal-container">
-            <div class="modal">
+            <div class="modal modal-right">
                 <div class="modal__content">
                     <div class="image">
                         <img src="./works/portfolio/portfolio1_result.png" alt="">
@@ -761,18 +817,17 @@
                     </div>
 
                     <div class="visit">
-                        <a href="https://portfolio-gacem.netlify.app" target="_blank"><button></button>Visit </button></a>
+                        <a href="https://portfolio-gacem.netlify.app" target="_blank"><button>Visit </button></a>
                     </div>
 
                 </div>
             </div>
-            <div class="overlay"></div>
+            <div class="overlay" nth-modal="1" onclick="closeProcessModal(this)"></div>
             <button class="btn btn--open">Open</button>
         </div>
 
-
         <div class="modal-container">
-            <div class="modal">
+            <div class="modal modal-right">
                 <div class="modal__content">
                     <div class="image">
                         <img src="./works/devchallenges/res.png" alt="">
@@ -822,17 +877,17 @@
 
                     </ul>
                     <div class="visit">
-                        <a href="https://devchallenges.io" target="_blank"><button></button>Visit devChallenges</button></a>
+                        <a href="https://devchallenges.io" target="_blank"><button>Visit devChallenges</button></a>
                     </div>
 
                 </div>
             </div>
-            <div class="overlay"></div>
+            <div class="overlay" nth-modal="2" onclick="closeProcessModal(this)"></div>
             <button class="btn btn--open">Open</button>
         </div>
 
         <div class="modal-container">
-            <div class="modal">
+            <div class="modal modal-right">
                 <div class="modal__content">
                     <div class="image">
                         <img src="./works/inProcess/catApp.png" alt="">
@@ -868,18 +923,17 @@
                     </div>
 
                     <div class="visit">
-                        <a href="" target="_blank"><button disabled></button>Visit </button></a>
+                        <a href="" target="_blank"><button disabled>Visit </button></a>
                     </div>
 
                 </div>
             </div>
-            <div class="overlay"></div>
+            <div class="overlay" nth-modal="3" onclick="closeProcessModal(this)"></div>
             <button class="btn btn--open">Open</button>
         </div>
 
-
         <div class="modal-container">
-            <div class="modal">
+            <div class="modal modal-right">
                 <div class="modal__content">
                     <div class="image">
                         <img src="./works/inProcess/taxi.png" alt="">
@@ -913,27 +967,37 @@
                     </div>
 
                     <div class="visit">
-                        <a href="" target="_blank"><button disabled></button>Visit </button></a>
                     </div>
 
                 </div>
             </div>
-            <div class="overlay"></div>
+            <div class="overlay" nth-modal="4" onclick="closeProcessModal(this)"></div>
             <button class="btn btn--open">Open</button>
         </div>
 
 
-        <!--  Some About Me   -->
-        Video production, figma ui, Logo, Arduibno diy, Calistenic,
+        <!--  Side Work   -->
 
+        <div class="modal-container">
+            <div class="modal " id="modal-side-work">
+                <div class="modal__content">
+                    <div class="image">
+                        <a href="./works/logos/logos.png" target="_blank">
+                            <img src="./works/logos/logos.png" alt="">
+                        </a>
+                        <a href="./works/logos/train.png" target="_blank">
+                            <img src="./works/logos/train.png" alt="">
+                        </a>
 
-        <div class="jervi">
-            <main>
-                <div>
-                    <p data-text="Jervi">Jervi</p>
+                    </div>
                 </div>
-            </main>
+            </div>
+            <div class="overlay" onclick="CloseSideWork()"></div>
         </div>
+
+
+
+        
 
     </div>
 
@@ -983,22 +1047,55 @@
         }, false);
     </script>
     <script>
-        function openModal(d) {
-            alert(d.getAttribute("nth-card"));
+        function shake() {
+            document.getElementById("shake-btn").classList.add("shake");
+            setTimeout(function() {
+                document.getElementById("shake-btn").classList.remove("shake");
+            }, 3000);
         }
 
-        var modal = document.querySelector('.modal');
-        var open = document.querySelector('.btn--open');
-        var close = document.querySelector('.btn--close, .overlay');
+        function openMadeModal(d) {
+            var modals = document.getElementsByClassName('modal-left');
+            var index = d.getAttribute("nth-card");
+            var modal = modals[index];
+            modal.classList.add('modal--show');
+            openedModal = index;
+        }
 
-        function closeModal() {
+        function closeMadeModal(d) {
+            var modals = document.getElementsByClassName('modal-left');
+            var index = d.getAttribute("nth-modal");
+            var modal = modals[index];
             modal.classList.remove('modal--show');
-
         }
 
-        close.addEventListener('click', function() {
-            closeModal();
-        }, false);
+        function openProcessModal(d) {
+            var modals = document.getElementsByClassName('modal-right');
+            var index = d.getAttribute("nth-card");
+            var modal = modals[index]
+            modal.classList.add('modal--show');
+            openedModal = index;
+        }
+
+        function closeProcessModal(d) {
+            var modals = document.getElementsByClassName('modal-right');
+            var index = d.getAttribute("nth-modal");
+            var modal = modals[index];
+            modal.classList.remove('modal--show');
+        }
+
+        function OpenSideWork() {
+            var modal = document.getElementById('modal-side-work');
+            modal.classList.add('modal--show');
+        }
+
+        function CloseSideWork() {
+            var modal = document.getElementById('modal-side-work');
+            modal.classList.remove('modal--show');
+        }
+
+
+
     </script>
     <script>
         function contact() {
