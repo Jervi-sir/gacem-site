@@ -475,9 +475,6 @@
                             <p class="title">Tir - travel Agency</p>
                             <p class="date">2020 - October</p>
                         </div>
-                        <div class="right">
-                            <img src="https://fakeimg.pl/50x50/?text=Hello" alt="">
-                        </div>
                     </div>
                     <div class="tags">
                         <div class="tag">
@@ -550,19 +547,10 @@
                             <p>Laravel</p>
                         </div>
                         <div class="tag">
-                            <p>Stripe</p>
-                        </div>
-                        <div class="tag">
                             <p>MySql</p>
                         </div>
                         <div class="tag">
                             <p>Bootstrap</p>
-                        </div>
-                        <div class="tag">
-                            <p>mail</p>
-                        </div>
-                        <div class="tag">
-                            <p>cart</p>
                         </div>
                     </div>
                     <div class="description">
@@ -760,10 +748,10 @@
                             <p>pure</p>
                         </div>
                         <div class="tag">
-                            <p>Css</p>
+                            <p>Mail</p>
                         </div>
                         <div class="tag">
-                            <p>Mail</p>
+                            <p>Css</p>
                         </div>
                     </div>
                     <div class="description">
@@ -1115,6 +1103,26 @@
             }
         }
     </script>
+
+    <script>
+        function SmoothVerticalScrolling(e, time, where) {
+            var eTop = e.getBoundingClientRect().top;
+            var eAmt = eTop / 100;
+            var curTime = 0;
+            while (curTime <= time) {
+                window.setTimeout(SVS_B, curTime, eAmt, where);
+                curTime += time / 100;
+            }
+        }
+
+        function SVS_B(eAmt, where) {
+            if(where == "center" || where == "")
+                window.scrollBy(0, eAmt / 2);
+            if (where == "top")
+                window.scrollBy(0, eAmt);
+        }
+    </script>
+    
 </body>
 
 </html>

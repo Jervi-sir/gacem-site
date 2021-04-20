@@ -910,9 +910,14 @@ body {
     font-size: .8rem;
 }
 
+
 .modal .tags {
     display: flex;
-    width: 100%1;
+    width: 100%;
+    /* display: flex; */
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
     flex-direction: row;
 }
 
