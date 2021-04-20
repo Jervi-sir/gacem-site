@@ -68,7 +68,7 @@ html {
     background-color: black;
     height: 65em;
     perspective: 200px;
-    margin-top: 40em;
+    margin-top: 65vh;
     transform: perspective(200px) rotateX(45deg) scale(2);
     animation: bg-animation 2s ease-out;
 }
@@ -117,7 +117,7 @@ body {
 .sunset {
     position: absolute;
     top: 2%;
-    left: 30%;
+    left: 27%;
     width: 10vw;
     z-index: 11;
     animation: 2.5s ease-out sunsetSlide;
@@ -364,7 +364,9 @@ body {
     flex-direction: row;
     justify-content: space-between;
 }
-
+.skills .container .column {
+    text-align: center;
+}
 .skills .column p {
     color: var(--c-color);
     font-weight: 1;
@@ -533,7 +535,7 @@ body {
     color: var(--d-color);
 }
 
-.contact-me .box button {
+.contact-me .box .form-button {
     border: 3px solid var(--b-color);
     background: transparent;
     color: var(--font-color);
@@ -544,7 +546,7 @@ body {
     width: 50%;
 }
 
-.contact-me .box button:hover {
+.contact-me .box .form-button:hover {
     border: 3px solid var(--c-color);
     color: var(--c-color);
     letter-spacing: 5px;
@@ -640,9 +642,6 @@ body {
 }
 
 .work .wrapper {
-    overflow-x: hidden; 
-    -ms-overflow-style: none;
-    scrollbar-width: none;
 }
 
 
@@ -653,7 +652,8 @@ body {
 
 .work .big-container {
     display: flex;
-    width: 200%;
+    flex-direction: column;
+    width: 100%;
 }
 
 .container-left {
@@ -1136,3 +1136,248 @@ main div p:after {
         clip: rect(83px, auto, 40px, 30px);
     }
 }
+
+@media only screen and (max-width: 1200px){
+    /*Tablets [601px -> 1200px]*/
+    .body {
+        width: 55%;
+    }
+    .find-me .left a {
+        font-size: 0.5rem;
+    }
+    .work .container.left {
+        width: 100%;
+    }
+    .work .big-container {
+        display: flex;
+        width: 100%;
+    }
+}
+
+
+@media only screen and (max-width: 789px){
+	/*Small smartphones [325px -> 425px]*/
+    .body {
+        width: 65%;
+    }
+    .sunset {
+        position: absolute;
+        top: 3%;
+        left: 6%;
+        width: 25vw;
+    }
+
+    .profile-detail {
+        flex-direction: column;
+        align-items: center;
+    }
+    .profile-detail h1 {
+        font-size: 2.7rem;
+    }
+
+    .profile-detail .contact-btn {
+        align-items: unset;
+    }
+
+    .skills {
+        margin-top: 2rem;
+    }
+
+    .find-me .container {
+        flex-direction: column;
+    }
+
+    .find-me .left i {
+        font-size: 1.3rem;
+        margin-top: 1rem;
+    }
+
+    .find-me .right {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .find-me .right::before {
+        border: none;
+    }
+    .find-me .left a {
+        text-decoration: none;
+        font-size: 0.7rem;
+        padding-left: 1rem;
+    }
+    .find-me .right i {
+        font-size: 1.5rem;
+        padding: 0;
+        margin: 0 !important;
+        margin-top: 1rem;
+    }
+
+    .switch-button {
+        width: 100%;
+    }
+    .switch-button-case{
+        font-size: 0.7em;
+        letter-spacing: 2px;
+    }
+    
+    .work .container {
+        flex-direction: column;
+    }
+
+    .work .big-container {
+        width: 198%;
+    }
+
+
+    .work .container.left {
+        width: 100%;
+    }
+    .work .card {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .translate-right {
+        transform: translateX(-100%);
+    }
+
+    .contact-me input {
+        margin: 0.7rem 0;
+    }
+
+    .contact-me form label {
+        font-size: 0.8rem;
+    }
+
+    .contact-me .box {
+        margin-bottom: 1rem;
+    }
+
+    .form-button {
+        width: 100% !important;
+        margin-top: 1rem;
+    }
+
+
+}
+
+@media only screen and (max-width: 550px){
+	/*Big smartphones [426px -> 600px]*/
+    .body {
+        width: 85%;
+    }
+    .sunset {
+        position: absolute;
+        top: 3%;
+        left: -28%;
+        width: 50vw;
+    }
+
+    .profile-detail h1 {
+        font-size: 2rem;
+    }
+
+        
+    .skills .container {
+        flex-wrap: wrap;
+    }
+    
+    
+    .skills .container .column {
+        width: 50%;
+        text-align: center;
+    }
+    
+    .skills .container .column:last-of-type {
+        width: 100%;
+        text-align: center;
+    }
+    
+}
+/*
+
+.skills .container {
+    flex-wrap: wrap;
+}
+
+.skills .container .column {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+
+}
+.skills .container .column p {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-align: right;
+}
+*/
+
+
+@media only screen and (max-width: 391px){
+
+    .sunset {
+        top: 3%;
+        left: -22%;
+        width: 40vw;
+    }
+
+    .find-me .left a {
+        padding-left: 0.1rem;
+        font-size: 0.6rem;
+    }
+    .find-me .right::before {
+        display: none;
+    }
+
+    .switch-button-case {
+        padding: 0;
+        width: 48%;
+    }
+
+    .work .big-container {
+        width: 100%;
+    }
+
+    .work .container.left {
+        width: 100%;
+    }
+    .work .card {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .translate-right {
+        transform: translateX(-100%);
+    }
+
+
+    .form-button {
+        width: 100% !important;
+        margin-top: 1rem;
+    }
+
+    main div p:before, main div p:after {
+        left: 56%;
+    }
+
+
+    
+
+}
+
+@media only screen and (max-width: 321px){
+
+    .skills .container {
+        flex-wrap: wrap;
+    }
+
+
+    .skills .container .column {
+        width: 100%;
+        text-align: center;
+    }
+}
+
