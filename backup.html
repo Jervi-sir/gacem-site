@@ -12,7 +12,7 @@
     <title>Jervi</title>
 </head>
 
-<body >
+<body>
     <div class="graph"></div>
 
     <div class="sunset">
@@ -186,7 +186,7 @@
                                         <p>cart</p>
                                     </div>
                                 </div>
-                        </div>
+                            </div>
                             <div class="btn--open check-detail">
                                 <button nth-card="0" onclick="openMadeModal(this)">Check for more details</button>
                             </div>
@@ -215,7 +215,7 @@
                                 </div>
                             </div>
                             <div class="check-detail">
-                                <button nth-card="1" onclick="openMadeModal(this)" >Check for more details</button>
+                                <button nth-card="1" onclick="openMadeModal(this)">Check for more details</button>
                             </div>
                         </div>
                         <div class="card">
@@ -433,14 +433,14 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="side-work">
             <h3>due to my need for some money to maintain my setup</h3>
             <h4>I tried freelancer, as a logo and template designer</h4>
             <div class="button">
                 <button class=".side-work" onclick="OpenSideWork()"><span>OPEN</span></button>
             </div>
-            
+
 
         </div>
         <div class="jervi">
@@ -453,7 +453,7 @@
 
 
         <!-- Modal   -->
-        
+
         <div class="modal-container">
             <div class="modal modal-left">
                 <div class="modal__content">
@@ -509,14 +509,14 @@
 
                     <div class="visit">
                         <a href="http://quiet-savannah-26910.herokuapp.com/" target="_blank">
-                            <button >Visit </button>
+                            <button>Visit </button>
                         </a>
                     </div>
 
                 </div>
             </div>
             <div class="overlay" nth-modal="0" onclick="closeMadeModal(this)"></div>
-             <button class="btn btn--open">Open</button>
+            <button class="btn btn--open">Open</button>
         </div>
 
         <div class="modal-container">
@@ -552,7 +552,7 @@
                         Organizing agency Offers, and Providing a structured control to the database
                         <br> you can access this section as admin, or as worker
                         <br> as Admin::
-                        
+
                         <br> you are able to
                         <ul>
                             <li>Add, Edit, Delete, View data</li>
@@ -560,7 +560,7 @@
                             <li>adding Users (admin required)</li>
                             <li>View Analetics</li>
                         </ul>
-                        <br> 
+                        <br>
                         <p class="red" style="color:tomato">email: admin@admin.com</p>
                         <p class="red" style="color:tomato">psswd: password</p>
                     </div>
@@ -711,14 +711,12 @@
                             <button id="shake-btn" class="disabled" onclick="shake()">
                                 <span class="default btn-caption">Visit</span><span class="error btn-caption">in Fixing bugs - sorry -</span>
                             </button></div>
-                        </a>
-                    </div>
+                    </a>
+                </div>
             </div>
             <div class="overlay" nth-modal="4" onclick="closeMadeModal(this)"></div>
             <button class="btn btn--open">Open</button>
         </div>
-
-
 
         <div class="modal-container">
             <div class="modal modal-right">
@@ -764,7 +762,6 @@
                         <a href="https://gacem.netlify.app/" target="_blank"><button>Visit</button></a>
                     </div>
                     <script>
-                        
                     </script>
                 </div>
             </div>
@@ -997,8 +994,7 @@
                     'phone': '(+213) 558 05 43 00',
                     'email': 'gacembekhira@gmail.com'
                 },
-                madeWorks: [
-                    {
+                madeWorks: [{
                         id: '1',
                         thumbnail: './works/tir/tir1_result.png',
                         image: './works/tir/tir1_result.png',
@@ -1007,8 +1003,7 @@
                         tags: ['Laravel', 'Stripe', 'MySql', 'Bootstrap', 'mail', 'cart'],
                         description: 'description',
                         link: 'url'
-                    },
-                    {
+                    }, {
                         id: '2',
                         thumbnail: './works/tir/tir admin 1_result.png',
                         image: './works/tir/tir admin 1_result.png',
@@ -1017,8 +1012,7 @@
                         tags: ['Laravel', 'MySql', 'Bootstrap'],
                         description: 'description',
                         link: 'url'
-                    },
-                    {
+                    }, {
                         id: '3',
                         thumbnail: './works/saav/saav1_result.png',
                         image: './works/saav/saav1_result.png',
@@ -1027,8 +1021,7 @@
                         tags: ['Laravel', 'MySql', 'MailChimp', 'Bootstrap', 'Hosted'],
                         description: 'description',
                         link: 'url'
-                    },
-                    {
+                    }, {
                         id: '4',
                         thumbnail: './works/portfolio/jervi2_result.png',
                         image: './works/portfolio/jervi2_result.png',
@@ -1037,8 +1030,7 @@
                         tags: ['pure', 'css', 'js'],
                         description: 'No description,\nMade with only CSS, and Paralax\nRemark: template isn\'t responsive',
                         link: 'url'
-                    },
-                    {
+                    }, {
                         id: '5',
                         thumbnail: './works/zoom/zoom.png',
                         image: './works/zoom/zoom.png',
@@ -1048,12 +1040,12 @@
                         description: 'Basic video chat room, no need register for joining a chat,',
                         link: 'url'
                     },
-                    
+
                 ]
             }
         })
     </script>
-    
+
     <script>
         'use strict';
 
@@ -1146,9 +1138,6 @@
             var modal = document.getElementById('modal-side-work');
             modal.classList.remove('modal--show');
         }
-
-
-
     </script>
     <script>
         function contact() {
@@ -1181,13 +1170,13 @@
         }
 
         function SVS_B(eAmt, where) {
-            if(where == "center" || where == "")
+            if (where == "center" || where == "")
                 window.scrollBy(0, eAmt / 2);
             if (where == "top")
                 window.scrollBy(0, eAmt);
         }
     </script>
-    
+
 </body>
 
 </html>

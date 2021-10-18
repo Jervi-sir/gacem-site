@@ -12,7 +12,7 @@
     <title>Jervi</title>
 </head>
 
-<body >
+<body>
     <div class="graph"></div>
 
     <div class="sunset">
@@ -97,26 +97,25 @@
         <!--  Book a session  -->
         <div class="contact-me hide-contact" id="contactMe">
             <h1>Book a session </h1>
-            <form action="" id="form-contact">
+            <form method="POST" action="" id="form-contact" netlify>
                 <div class="box">
                     <label for="email">Enter Your Email Address</label>
-                    <input type="email" class="input-box">
+                    <input name="email" type="email" class="input-box">
                 </div>
                 <div class="box">
                     <label for="subject">Lemme know your name <span>( optional )</span> </label>
-                    <input type="text" class="input-box">
+                    <input name="name" type="text" class="input-box">
                 </div>
                 <div class="box">
                     <label for="email">Your Enquiry</label>
                     <textarea name="message" id="" cols="30" rows="10"></textarea>
                 </div>
                 <div class="box">
-                    <button class="form-button">Submit</button>
+                    <button type="submit" class="form-button">Submit</button>
                 </div>
 
             </form>
         </div>
-
 
         <!--  My Works  -->
         <div class="work">
@@ -146,9 +145,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <a :href="work.link" target="_blank">temporary goto</a>
                             <div class="check-detail">
-                                <button :click="openMadeModal(work.id)">Check for more details</button>
+                                <button @click="openMadeModal(work.id)">Check for more details</button>
                             </div>
                         </div>
                     </div>
@@ -172,24 +170,22 @@
                                 </div>
                             </div>
                             <div class="check-detail">
-                                <button :click="openMadeModal(work.id)">Check for more details</button>
+                                <button @click="openProcessModal(work.id)">Check for more details</button>
                             </div>
                         </div>
-                        
+
                     </div>
 
                 </div>
             </div>
         </div>
-        
+
         <div class="side-work">
             <h3>due to my need for some money to maintain my setup</h3>
             <h4>I tried freelancer, as a logo and template designer</h4>
             <div class="button">
                 <button class=".side-work" onclick="OpenSideWork()"><span>OPEN</span></button>
             </div>
-            
-
         </div>
         <div class="jervi">
             <main>
@@ -199,14 +195,12 @@
             </main>
         </div>
 
-
         <!-- Modal   -->
-        
-        <div class="modal-container">
-            <div class="modal modal-right">
+        <div id="modal" class="modal-container">
+            <div class="modal modal-target">
                 <div class="modal__content">
                     <div class="image">
-                        <img src="./works/inProcess/taxi.png" alt="">
+                        <img :src="modal.image" alt="">
                     </div>
                     <div class="dots">
                         <span>.</span>
@@ -215,39 +209,28 @@
                     </div>
                     <div class="details">
                         <div class="left">
-                            <p class="title">cat App with a plot twist</p>
-                            <p class="date">InProcess__</p>
+                            <p class="title">{{modal.title}}</p>
+                            <p class="date">{{modal.date}}</p>
                         </div>
 
                     </div>
                     <div class="tags">
-                        <div class="tag">
-                            <p>Laravel Api</p>
-                        </div>
-                        <div class="tag">
-                            <p>Ai PHP</p>
-                        </div>
-                        <div class="tag">
-                            <p>Native</p>
+                        <div class="tag" v-for="tag in modal.tags">
+                            <p>{{ tag }}</p>
                         </div>
                     </div>
-                    <div class="description">
-                        wanted to solve issue with ppl who cannot find taxi between wilayat, during covid
-                        <br> enforently the project was canceled due to the situation has been changed, and motivation ra7t
+                    <div class="description" v-html="modal.description">
                     </div>
-
                     <div class="visit">
+                        <a :href="modal.link" target="_blank"><button>Visit </button></a>
                     </div>
 
                 </div>
             </div>
-            <div class="overlay" nth-modal="4" onclick="closeProcessModal(this)"></div>
-            <button class="btn btn--open">Open</button>
+            <div class="overlay" nth-modal="4" @click="closeProcessModal"></div>
         </div>
 
-
         <!--  Side Work   -->
-
         <div class="modal-container">
             <div class="modal " id="modal-side-work">
                 <div class="modal__content">
@@ -266,18 +249,41 @@
         </div>
     </div>
 
-
     <script>
         var app = new Vue({
             el: '#animationOnload',
             methods: {
                 openMadeModal: function(id) {
-                    //var modals = document.getElementsByClassName('modal-left');
-                    //var index = d.getAttribute("nth-card");
-                    //var modal = modals[index];
-                    //modal.classList.add('modal--show');
-                    //openedModal = index;
+                    id = id - 1;
+                    this.modal.thumbnail = this.madeWorks[id].thumbnail;
+                    this.modal.image = this.madeWorks[id].image;
+                    this.modal.title = this.madeWorks[id].title;
+                    this.modal.date = this.madeWorks[id].date;
+                    this.modal.tags = this.madeWorks[id].tags;
+                    this.modal.description = this.madeWorks[id].description;
+                    this.modal.link = this.madeWorks[id].link;
+
+                    var modal = document.getElementsByClassName('modal-target')[0];
+                    modal.classList.add('modal--show');
+                },
+                openProcessModal: function(id) {
+                    id = id - 1;
+                    this.modal.thumbnail = this.processWorks[id].thumbnail;
+                    this.modal.image = this.processWorks[id].image;
+                    this.modal.title = this.processWorks[id].title;
+                    this.modal.date = this.processWorks[id].date;
+                    this.modal.tags = this.processWorks[id].tags;
+                    this.modal.description = this.processWorks[id].description;
+                    this.modal.link = this.processWorks[id].link;
+
+                    var modal = document.getElementsByClassName('modal-target')[0];
+                    modal.classList.add('modal--show');
+                },
+                closeProcessModal: function() {
+                    var modal = document.getElementsByClassName('modal-target')[0];
+                    modal.classList.remove('modal--show');
                 }
+
             },
             data: {
                 skills: {
@@ -299,155 +305,155 @@
                     'facebook': 'https://www.facebook.com/gacem.humen/',
                     'youtube': 'https://www.youtube.com/channel/UCD-YOxxLv5yGhcerkZLGZgg',
                     'instagram': 'https://www.instagram.com/gacem_humen/',
-                    'phone': [ 'tel:+213558054300' , '(+213) 558 05 43 00'],
+                    'phone': ['tel:+213558054300', '(+213) 558 05 43 00'],
                     'email': ['mailto:gacembekhira@gmail.com', 'gacembekhira@gmail.com']
                 },
-                madeWorks: [
-                    {
-                        id: '1',
-                        thumbnail: './works/tir/tir1_result.png',
-                        image: './works/tir/tir1_result.png',
-                        title: 'Tir - travel Agency',
-                        date: '2020 - October',
-                        tags: ['Laravel', 'Stripe', 'MySql', 'Bootstrap', 'mail', 'cart'],
-                        description: 'description',
-                        link: 'url'
-                    },
-                    {
-                        id: '2',
-                        thumbnail: './works/tir/tir admin 1_result.png',
-                        image: './works/tir/tir admin 1_result.png',
-                        title: 'Tir - Admin side',
-                        date: '2020 - October',
-                        tags: ['Laravel', 'MySql', 'Bootstrap'],
-                        description: 'description',
-                        link: 'url'
-                    },
-                    {
-                        id: '3',
-                        thumbnail: './works/saav/saav1_result.png',
-                        image: './works/saav/saav1_result.png',
-                        title: 'SaavyWorld-official',
-                        date: '2020 - October',
-                        tags: ['Laravel', 'MySql', 'MailChimp', 'Bootstrap', 'Hosted'],
-                        description: 'description',
-                        link: 'url'
-                    },
-                    {
-                        id: '4',
-                        thumbnail: './works/portfolio/jervi2_result.png',
-                        image: './works/portfolio/jervi2_result.png',
-                        title: 'Jervi --',
-                        date: '2021 - March',
-                        tags: ['pure', 'css', 'js'],
-                        description: 'No description,\nMade with only CSS, and Paralax\nRemark: template isn\'t responsive',
-                        link: 'url'
-                    },
-                    {
-                        id: '5',
-                        thumbnail: './works/zoom/zoom.png',
-                        image: './works/zoom/zoom.png',
-                        title: 'Zoom Clone',
-                        date: '2021 - March',
-                        tags: ['p2p', 'Nodejs'],
-                        description: 'Basic video chat room, no need register for joining a chat,',
-                        link: 'url'
-                    },
-                    {
-                        id: '6',
-                        thumbnail: './works/hunt digits/hunt digits.png',
-                        image: './works/hunt digits/hunt digits.png',
-                        title: 'Hunt digits',
-                        date: '2021 - Sptember',
-                        tags: ['vuejs', 'Nodejs', 'webscrape'],
-                        description: 'hunt best prices,',
-                        link: 'https://hunt-digits.herokuapp.com/'
-                    },
-                    {
-                        id: '7',
-                        thumbnail: './works/2kings/2kings.png',
-                        image: './works/2kings/2kings.png',
-                        title: '2Kings',
-                        date: '2021 - September',
-                        tags: ['pure', 'js', 'CSS'],
-                        description: 'My company landing page,',
-                        link: 'https://2kings-websites.netlify.app/'
-                    },
-                    {
-                        id: '8',
-                        thumbnail: './works/o2dz/o2dz.png',
-                        image: './works/o2dz/o2dz.png',
-                        title: 'O2dz',
-                        date: '2021 - August',
-                        tags: ['Laravel'],
-                        description: 'where to find and propose oxygen (deleted db),',
-                        link: 'https://o2dz.com/'
-                    },
-                    {
-                        id: '9',
-                        thumbnail: './works/atlas/atlas club.png',
-                        image: './works/atlas/atlas club.png',
-                        title: 'Atlas registration',
-                        date: '2021 - September',
-                        tags: ['pure', 'netlify'],
-                        description: 'form registration for atlas,',
-                        link: 'https://atlas-club.netlify.app/'
-                    },
-                   
-                    
-                ],
-                processWorks: [
-                    {
+                modal: {
+                    thumbnail: '',
+                    image: '',
+                    title: '',
+                    date: '',
+                    tags: '',
+                    description: '',
+                    link: ''
+                },
+                madeWorks: [{
+                    id: '1',
+                    thumbnail: './works/tir/tir1_result.png',
+                    image: './works/tir/tir1_result.png',
+                    title: 'Tir - travel Agency',
+                    date: '2020 - October',
+                    tags: ['Laravel', 'Stripe', 'MySql', 'Bootstrap', 'mail', 'cart'],
+                    description: 'Offering Hotel, Car renting, plane ticket purchase, Omra services<br> Comes with an online payment with STRIPE, and a reservation cart, similar idea with Shopping cart<br> you are able to<ul><li>sign in and log in</li><li>purchase an order</li><li>cancel possible reservations</li><li>save and print reservation\'s tickets</li><li>send emails</li><li>reset password</li><li></li></ul>To pay for an offre enter Stipe\'s code : 4242424242424242424242',
+                    link: 'https://tir-agency-2kings.herokuapp.com/'
+                }, {
+                    id: '2',
+                    thumbnail: './works/tir/tir admin 1_result.png',
+                    image: './works/tir/tir admin 1_result.png',
+                    title: 'Tir - Admin side',
+                    date: '2020 - October',
+                    tags: ['Laravel', 'MySql', 'Bootstrap'],
+                    description: 'Organizing agency Offers, and Providing a structured control to the database<br> you can access this section as admin, or as worker<br> as Admin::<br> you are able to<ul><li>Add, Edit, Delete, View data</li><li>Receive emails for Omra procedure</li><li>adding Users (admin required)</li><li>View Analetics</li></ul><br><p class="red" style="color:tomato">email: admin@admin.com</p><p class="red" style="color:tomato">psswd: password</p>',
+                    link: 'https://tir-agency-2kings.herokuapp.com/'
+                }, {
+                    id: '3',
+                    thumbnail: './works/saav/saav1_result.png',
+                    image: './works/saav/saav1_result.png',
+                    title: 'SaavyWorld-official',
+                    date: '2020 - October',
+                    tags: ['Laravel', 'MySql', 'MailChimp', 'Bootstrap', 'Hosted'],
+                    description: 'Saav, rapper and an artist based in NYC, aimed to give a push for his brand,<br> a place where he can provide his latest work and updates<br> Available Section<ul><li>Main</li><li>Music</li><li>Merch</li><li>Visuals</li><li>Art</li></ul>',
+                    link: 'https://saavyworld.com/'
+                }, {
+                    id: '4',
+                    thumbnail: './works/portfolio/jervi2_result.png',
+                    image: './works/portfolio/jervi2_result.png',
+                    title: 'Jervi --',
+                    date: '2021 - March',
+                    tags: ['pure', 'css', 'js'],
+                    description: 'No description,<br> Made with only CSS, and Paralax<br> Remark: template isn\'t responsive',
+                    link: 'https://jervi.netlify.app'
+                }, {
+                    id: '5',
+                    thumbnail: './works/zoom/zoom.png',
+                    image: './works/zoom/zoom.png',
+                    title: 'Zoom Clone',
+                    date: '2021 - March',
+                    tags: ['p2p', 'Nodejs'],
+                    description: 'Basic video chat room, no need register for joining a chat,<br>',
+                    link: ''
+                }, {
+                    id: '6',
+                    thumbnail: './works/hunt digits/hunt digits.png',
+                    image: './works/hunt digits/hunt digits.png',
+                    title: 'Hunt digits',
+                    date: '2021 - Sptember',
+                    tags: ['vuejs', 'Nodejs', 'webscrape'],
+                    description: 'hunt best prices,',
+                    link: 'https://hunt-digits.herokuapp.com/'
+                }, {
+                    id: '7',
+                    thumbnail: './works/2kings/2kings.png',
+                    image: './works/2kings/2kings.png',
+                    title: '2Kings',
+                    date: '2021 - September',
+                    tags: ['pure', 'js', 'CSS'],
+                    description: 'My company landing page,',
+                    link: 'https://2kings-websites.netlify.app/'
+                }, {
+                    id: '8',
+                    thumbnail: './works/o2dz/o2dz.png',
+                    image: './works/o2dz/o2dz.png',
+                    title: 'O2dz',
+                    date: '2021 - August',
+                    tags: ['Laravel'],
+                    description: 'where to find and propose oxygen (deleted db),',
+                    link: 'https://o2dz.com/'
+                }, {
+                    id: '9',
+                    thumbnail: './works/atlas/atlas club.png',
+                    image: './works/atlas/atlas club.png',
+                    title: 'Atlas registration',
+                    date: '2021 - September',
+                    tags: ['pure', 'netlify'],
+                    description: 'form registration for atlas,',
+                    link: 'https://atlas-club.netlify.app/'
+                }, {
+                    id: '10',
+                    thumbnail: './works/survey/uat servey.png',
+                    image: './works/survey/uat servey.png',
+                    title: 'University Survey',
+                    date: '2021 - March',
+                    tags: ['vuejs', 'laravel', 'api'],
+                    description: 'form registration for university survey,',
+                    link: 'https://atlas-club.netlify.app/'
+                }, ],
+                processWorks: [{
                         id: '1',
                         thumbnail: './works/portfolio/jerviV2_result.png',
                         image: './works/portfolio/jerviV2_result.png',
                         title: 'Current Portfolio',
                         date: '2021 - April',
                         tags: ['pure', 'css', 'js'],
-                        description: 'No description,\nMade with only CSS, and Paralax\nRemark: template isn\'t responsive',
-                        link: 'url'
-                    },
-                    {
+                        description: 'Made with only CSS, wanted to try synthwave approiche, Currently m using it as a portfolio<br> next steps to cover<ul><li>Use vuejs to make it dynamic with a json datebase [done]</li><li>send email with nelify [done]</li><li>make a racing game maybe</li><li>maybe animate the road</li></ul>',
+                        link: 'https://gacem.netlify.app'
+                    }, {
                         id: '2',
                         thumbnail: './works/portfolio/portfolio1_result.png',
                         image: './works/portfolio/portfolio1_result.png',
                         title: 'Porfolio for software',
                         date: '2021 - March',
                         tags: ['vueJs'],
-                        description: 'No description,\nMade with only CSS, and Paralax\nRemark: template isn\'t responsive',
-                        link: 'url'
-                    },
-                    {
+                        description: 'in process',
+                        link: 'https://portfolio-gacem.netlify.app'
+                    }, {
                         id: '3',
                         thumbnail: './works/devchallenges/res.png',
                         image: './works/devchallenges/res.png',
                         title: 'Collection of 60 webpages',
                         date: '2021 - April',
                         tags: ['pure', 'css', 'js'],
-                        description: 'No description,\nMade with only CSS, and Paralax\nRemark: template isn\'t responsive',
-                        link: 'url'
-                    },
-                    {
+                        description: 'trying to finish lot amount of websites projects provided by <a href="devchallenges.io">DevChallenges.io </a>,<br> this platform\'s challenges cover from front-end to back-end, aiming to turn a beginer developpers to more experinced with real world projects.',
+                        link: ''
+                    }, {
                         id: '4',
                         thumbnail: './works/inProcess/catApp.png',
                         image: './works/inProcess/catApp.png',
                         title: 'cat App wit ha plot twist',
                         date: 'InProcess__',
                         tags: ['Laravel', 'Vuejs', 'api'],
-                        description: 'No description,\nMade with only CSS, and Paralax\nRemark: template isn\'t responsive',
-                        link: 'url'
-                    },
-                    {
+                        description: 'No description',
+                        link: ''
+                    }, {
                         id: '5',
-                        thumbnail: './works/portfolio/jervi2_result.png',
+                        thumbnail: './works/inProcess/taxi.png',
                         image: './works/portfolio/jervi2_result.png',
                         title: 'Taxi trip Organizer Covid',
                         date: 'Canceled__',
                         tags: ['Laravel', 'api'],
-                        description: 'No description,\nMade with only CSS, and Paralax\nRemark: template isn\'t responsive',
-                        link: 'url'
-                    },
-                    {
+                        description: 'wanted to solve issue with ppl who cannot find taxi between wilayat, during covid<br> enforently the project was canceled due to the situation has been changed, and motivation ra7t',
+                        link: ''
+                    }, {
                         id: '6',
                         thumbnail: './works/resvona/boxy.png',
                         image: './works/resvona/boxy.png',
@@ -455,9 +461,8 @@
                         date: '2021 - October',
                         tags: ['vuejs', 'Laravel', 'api'],
                         description: 'Connect peoples,',
-                        link: 'url'
-                    },
-                    {
+                        link: 'https://boxydz.netlify.app'
+                    }, {
                         id: '7',
                         thumbnail: './works/best price/best price.png',
                         image: './works/best price/best price.png',
@@ -465,9 +470,8 @@
                         date: '2021 - September',
                         tags: ['pure', 'front only'],
                         description: 'Hunt the best prices,',
-                        link: 'url'
-                    },
-                    {
+                        link: 'https://best-price.netlify.app'
+                    }, {
                         id: '8',
                         thumbnail: './works/toks/toks.png',
                         image: './works/toks/toks.png',
@@ -475,14 +479,23 @@
                         date: '2021 - September',
                         tags: ['laravel', 'payment'],
                         description: 'Platform where you can buy toks courses,',
-                        link: 'url'
+                        link: 'https://tradertoks.herokuapp.com/'
+                    }, {
+                        id: '9',
+                        thumbnail: './works/forum/main.png',
+                        image: './works/forum/main.png',
+                        title: 'toks platform',
+                        date: '2021 - September',
+                        tags: ['laravel', 'payment'],
+                        description: 'Platform of devs,',
+                        link: 'https://dev-1954.herokuapp.com/'
                     },
-                    
+
                 ]
             }
         })
     </script>
-    
+
     <script>
         'use strict';
 
@@ -567,9 +580,6 @@
             var modal = document.getElementById('modal-side-work');
             modal.classList.remove('modal--show');
         }
-
-
-
     </script>
     <script>
         function contact() {
@@ -602,13 +612,13 @@
         }
 
         function SVS_B(eAmt, where) {
-            if(where == "center" || where == "")
+            if (where == "center" || where == "")
                 window.scrollBy(0, eAmt / 2);
             if (where == "top")
                 window.scrollBy(0, eAmt);
         }
     </script>
-    
+
 </body>
 
 </html>
