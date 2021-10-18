@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
     <title>Jervi</title>
 </head>
 
-<body>
+<body >
     <div class="graph"></div>
 
     <div class="sunset">
@@ -53,37 +54,10 @@
             <h1>SKILLs and Techs provided</h1>
             <p>For now, only value I provided is by turning your business idea into website,<br> from e-commerce or more complicated to simple one as one page site</p>
             <div class="container">
-                <div class="column">
-                    <p>In use</p>
+                <div class="column" v-for="skill in skills">
+                    <p>{{ skill.name }}</p>
                     <ul>
-                        <li>Laravel</li>
-                        <li>React</li>
-                        <li>VueJs</li>
-                        <li>MySql</li>
-                        <li>CSS</li>
-                        <li>.</li>
-                    </ul>
-                </div>
-                <div class="column">
-                    <p>side used</p>
-                    <ul>
-                        <li>Premier Pro</li>
-                        <li>Arduino</li>
-                        <li>Android</li>
-                        <li>Figma</li>
-                        <li>Git</li>
-                        <li>.</li>
-                    </ul>
-                </div>
-                <div class="column">
-                    <p>In learning</p>
-                    <ul>
-                        <li>React Native</li>
-                        <li>Network 2s</li>
-                        <li>WebRTC</li>
-                        <li>Ui / Ux</li>
-                        <li>GSAP</li>
-                        <li>.</li>
+                        <li v-for="tag in skill.tags">{{tag}}</li>
                     </ul>
                 </div>
             </div>
@@ -97,37 +71,33 @@
                 <div class="left">
                     <div class="row-find">
                         <i class="fa fa-phone" aria-hidden="true"></i>
-                        <a href="tel:+213558054300">(+213) 558 05 43 00</a>
+                        <a :href="socials['phone'][0]">{{ socials['phone'][1] }}</a>
                     </div>
                     <div class="row-find">
                         <i class="fa fa-envelope" aria-hidden="true"></i>
-                        <a href="mailto:gacembekhira.personal@gmail.com">2kingswebsites@gmail.com</a>
+                        <a :href="socials['email'][0]">{{ socials['email'][1] }}</a>
                     </div>
                 </div>
                 <div class="right">
-                    <a href="https://github.com/Jervi-sir" target="_blanc"><i class="fa fa-github icon" aria-hidden="true"></i></a>
-                    <a href="https://www.facebook.com/gacem.humen/" target="_blanc"><i class="fa fa-facebook icon" aria-hidden="true"></i></a>
-                    <a href="https://www.youtube.com/channel/UCD-YOxxLv5yGhcerkZLGZgg" target="_blanc"><i class="fa fa-youtube icon" aria-hidden="true"></i></a>
-                    <a href="https://www.instagram.com/gacem_humen/" target="_blanc"><i class="fa fa-instagram icon" aria-hidden="true"></i></a>
+                    <a :href="socials['github']" target="_blanc"><i class="fa fa-github icon" aria-hidden="true"></i></a>
+                    <a :href="socials['facebook']" target="_blanc"><i class="fa fa-facebook icon" aria-hidden="true"></i></a>
+                    <a :href="socials['youtube']" target="_blanc"><i class="fa fa-youtube icon" aria-hidden="true"></i></a>
+                    <a :href="socials['instagram']" target="_blanc"><i class="fa fa-instagram icon" aria-hidden="true"></i></a>
                 </div>
             </div>
+            <!--
+            <div class="socials">
+                <a href="tel:"><i class="fa fa-phone" aria-hidden="true"></i>{{ socials['instagram'] }}</a>
+                <a href="mailto:gacembekhira.personal@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i>socials['email']</a>
+                <a href="https://www.facebook.com/gacem.humen/" target="_blanc"><i class="fa fa-facebook icon" aria-hidden="true"></i>acebook</a>
+            </div>
+            -->
         </div>
 
         <!--  Book a session  -->
         <div class="contact-me hide-contact" id="contactMe">
             <h1>Book a session </h1>
             <form action="" id="form-contact">
-                <div class="box">
-                    <h1>for now,</h1>
-                    <h1>contact me throught social or email</h1>
-                    <div class="socials">
-                        <a href="tel:+213558054300"><i class="fa fa-phone" aria-hidden="true"></i>(+213) 558 05 43 00</a>
-                        <a href="mailto:gacembekhira.personal@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i>gacembekhira.personal@gmail.com</a>
-                        <a href="https://www.facebook.com/gacem.humen/" target="_blanc"><i class="fa fa-facebook icon" aria-hidden="true"></i>acebook</a>
-                </div>
-                    <p>this contact form is in process built,<br> maybe with react or laravel, i havent choosen yet</p>
-                </div>
-
                 <div class="box">
                     <label for="email">Enter Your Email Address</label>
                     <input type="email" class="input-box">
@@ -159,280 +129,53 @@
             <div class="wrapper">
                 <div class="big-container" id="move-container">
                     <div id="container-left" class="container left">
-                        <div class="card">
+                        <div class="card" v-for="work in madeWorks" :key="work.id">
                             <div class="top">
                                 <div class="image">
-                                    <img src="./works/tir/tir1_result.png" alt="">
+                                    <img :src="work.thumbnail" alt="">
                                 </div>
                                 <div class="details">
                                     <div class="left">
-                                        <p class="title">Tir - travel Agency</p>
-                                        <p class="date">2020 - October</p>
-                                    </div>
-
-                                </div>
-                                <div class="tags">
-                                    <div class="tag">
-                                        <p>Laravel</p>
-                                    </div>
-                                    <div class="tag">
-                                        <p>Stripe</p>
-                                    </div>
-                                    <div class="tag">
-                                        <p>MySql</p>
-                                    </div>
-                                    <div class="tag">
-                                        <p>Bootstrap</p>
-                                    </div>
-                                    <div class="tag">
-                                        <p>mail</p>
-                                    </div>
-                                    <div class="tag">
-                                        <p>cart</p>
-                                    </div>
-                                </div>
-                        </div>
-                            <div class="btn--open check-detail">
-                                <button nth-card="0" onclick="openMadeModal(this)">Check for more details</button>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="top">
-                                <div class="image">
-                                    <img src="./works/tir/tir admin 1_result.png" alt="">
-                                </div>
-                                <div class="details">
-                                    <div class="left">
-                                        <p class="title">Tir - Admin side</p>
-                                        <p class="date">2020 - October</p>
+                                        <p class="title">{{ work.title }}</p>
+                                        <p class="date">{{ work.date }}</p>
                                     </div>
                                 </div>
                                 <div class="tags">
-                                    <div class="tag">
-                                        <p>Laravel</p>
-                                    </div>
-                                    <div class="tag">
-                                        <p>MySql</p>
-                                    </div>
-                                    <div class="tag">
-                                        <p>Bootstrap</p>
+                                    <div class="tag" v-for="tag in work.tags">
+                                        <p>{{ tag }}</p>
                                     </div>
                                 </div>
                             </div>
+                            <a :href="work.link" target="_blank">temporary goto</a>
                             <div class="check-detail">
-                                <button nth-card="1" onclick="openMadeModal(this)" >Check for more details</button>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="top">
-                                <div class="image">
-                                    <img src="./works/saav/saav1_result.png" alt="">
-                                </div>
-                                <div class="details">
-                                    <div class="left">
-                                        <p class="title">SaavyWorld-official</p>
-                                        <p class="date">2020 - October</p>
-                                    </div>
-                                </div>
-                                <div class="tags">
-                                    <div class="tag">
-                                        <p>Laravel</p>
-                                    </div>
-                                    <div class="tag">
-                                        <p>MailChimp</p>
-                                    </div>
-                                    <div class="tag">
-                                        <p>Bootstrap</p>
-                                    </div>
-                                    <div class="tag">
-                                        <p>Hosted</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="check-detail">
-                                <button nth-card="2" onclick="openMadeModal(this)">Check for more details</button>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="top">
-                                <div class="image">
-                                    <img src="./works/portfolio/jervi2_result.png" alt="">
-                                </div>
-                                <div class="details">
-                                    <div class="left">
-                                        <p class="title">Jervi --</p>
-                                        <p class="date">2021 - March</p>
-                                    </div>
-                                </div>
-                                <div class="tags">
-                                    <div class="tag">
-                                        <p>pure</p>
-                                    </div>
-                                    <div class="tag">
-                                        <p>css</p>
-                                    </div>
-                                    <div class="tag">
-                                        <p>js</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="check-detail">
-                                <button nth-card="3" onclick="openMadeModal(this)">Check for more details</button>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="top">
-                                <div class="image">
-                                    <img src="./works/zoom/zoom.png" alt="">
-                                </div>
-                                <div class="details">
-                                    <div class="left">
-                                        <p class="title">Zoom Clone</p>
-                                        <p class="date">2021 - March</p>
-                                    </div>
-                                </div>
-                                <div class="tags">
-                                    <div class="tag">
-                                        <p>NodeJs</p>
-                                    </div>
-                                    <div class="tag">
-                                        <p>P2P</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="check-detail">
-                                <button nth-card="4" onclick="openMadeModal(this)">Check for more details</button>
+                                <button :click="openMadeModal(work.id)">Check for more details</button>
                             </div>
                         </div>
                     </div>
 
                     <div id="container-right" class="container right ">
-                        <div class="card">
+                        <div class="card" v-for="work in processWorks" :key="work.id">
                             <div class="top">
                                 <div class="image">
-                                    <img src="./works/portfolio/jerviV2_result.png" alt="">
+                                    <img :src="work.thumbnail" alt="">
                                 </div>
                                 <div class="details">
                                     <div class="left">
-                                        <p class="title">Current Portfolio </p>
-                                        <p class="date">2021 - April</p>
+                                        <p class="title">{{ work.title }}</p>
+                                        <p class="date">{{ work.date }}</p>
                                     </div>
                                 </div>
                                 <div class="tags">
-                                    <div class="tag">
-                                        <p>Pure</p>
-                                    </div>
-                                    <div class="tag">
-                                        <p>Mail</p>
-                                    </div>
-                                    <div class="tag">
-                                        <p>Css</p>
+                                    <div class="tag" v-for="tag in work.tags">
+                                        <p>{{ tag }}</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="check-detail">
-                                <button nth-card="0" onclick="openProcessModal(this)">Check for more details</button>
+                                <button :click="openMadeModal(work.id)">Check for more details</button>
                             </div>
                         </div>
-                        <div class="card">
-                            <div class="top">
-                                <div class="image">
-                                    <img src="./works/portfolio/portfolio1_result.png" alt="">
-                                </div>
-                                <div class="details">
-                                    <div class="left">
-                                        <p class="title">Porfolio for sofware dev</p>
-                                        <p class="date">2021 - March</p>
-                                    </div>
-                                </div>
-                                <div class="tags">
-                                    <div class="tag">
-                                        <p>React</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="check-detail">
-                                <button nth-card="1" onclick="openProcessModal(this)">Check for more details</button>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="top">
-                                <div class="image">
-                                    <img src="./works/devchallenges/res.png" alt="">
-                                </div>
-                                <div class="details">
-                                    <div class="left">
-                                        <p class="title">Collection of 60 webpages</p>
-                                        <p class="date">2021 - january</p>
-                                    </div>
-                                </div>
-                                <div class="tags">
-                                    <div class="tag">
-                                        <p>Depends on the challenge</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="check-detail">
-                                <button nth-card="2" onclick="openProcessModal(this)">Check for more details</button>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="top">
-                                <div class="image">
-                                    <img src="./works/inProcess/catApp.png" alt="">
-                                </div>
-                                <div class="details">
-                                    <div class="left">
-                                        <p class="title">cat App with a plot twist</p>
-                                        <p class="date">InProcess__</p>
-                                    </div>
-                                </div>
-                                <div class="tags">
-                                    <div class="tag">
-                                        <p>React Native</p>
-                                    </div>
-                                    <div class="tag">
-                                        <p>Flutter</p>
-                                    </div>
-                                    <div class="tag">
-                                        <p>Android</p>
-                                    </div>
-                                    <div class="tag">
-                                        <p>GraphQL</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="check-detail">
-                                <button nth-card="3" onclick="openProcessModal(this)">Check for more details</button>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="top">
-                                <div class="image">
-                                    <img src="./works/inProcess/taxi.png" alt="">
-                                </div>
-                                <div class="details">
-                                    <div class="left">
-                                        <p class="title">Taxi Trip Organizer Covid</p>
-                                        <p class="date">Canceled__</p>
-                                    </div>
-                                </div>
-                                <div class="tags">
-                                    <div class="tag">
-                                        <p>Laravel Api</p>
-                                    </div>
-                                    <div class="tag">
-                                        <p>Ai PHP</p>
-                                    </div>
-                                    <div class="tag">
-                                        <p>Native</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="check-detail">
-                                <button nth-card="4" onclick="openProcessModal(this)">Check for more details</button>
-                            </div>
-                        </div>
+                        
                     </div>
 
                 </div>
@@ -459,467 +202,6 @@
 
         <!-- Modal   -->
         
-        <div class="modal-container">
-            <div class="modal modal-left">
-                <div class="modal__content">
-                    <div class="image">
-                        <img src="./works/tir/tir1_result.png" alt="">
-                    </div>
-                    <div class="dots">
-                        <span>.</span>
-                        <span>.</span>
-                        <span>.</span>
-                    </div>
-                    <div class="details">
-                        <div class="left">
-                            <p class="title">Tir - travel Agency</p>
-                            <p class="date">2020 - October</p>
-                        </div>
-                    </div>
-                    <div class="tags">
-                        <div class="tag">
-                            <p>Laravel</p>
-                        </div>
-                        <div class="tag">
-                            <p>Stripe</p>
-                        </div>
-                        <div class="tag">
-                            <p>MySql</p>
-                        </div>
-                        <div class="tag">
-                            <p>Bootstrap</p>
-                        </div>
-                        <div class="tag">
-                            <p>mail</p>
-                        </div>
-                        <div class="tag">
-                            <p>cart</p>
-                        </div>
-                    </div>
-                    <div class="description">
-                        Offering Hotel, Car renting, plane ticket purchase, Omra services
-                        <br> Comes with an online payment with STRIPE, and a reservation cart, similar idea with Shopping cart
-                        <br> you are able to
-                        <ul>
-                            <li>sign in and log in</li>
-                            <li>purchase an order</li>
-                            <li>cancel possible reservations</li>
-                            <li>save and print reservation's tickets</li>
-                            <li>send emails</li>
-                            <li>reset password</li>
-                            <li></li>
-                        </ul>
-                        To pay for an offre enter Stipe's code : 4242424242424242424242
-                    </div>
-
-                    <div class="visit">
-                        <a href="http://quiet-savannah-26910.herokuapp.com/" target="_blank">
-                            <button >Visit </button>
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-            <div class="overlay" nth-modal="0" onclick="closeMadeModal(this)"></div>
-             <button class="btn btn--open">Open</button>
-        </div>
-
-        <div class="modal-container">
-            <div class="modal modal-left">
-                <div class="modal__content">
-                    <div class="image">
-                        <img src="./works/tir/tir admin 1_result.png" alt="">
-                    </div>
-                    <div class="dots">
-                        <span>.</span>
-                        <span>.</span>
-                        <span>.</span>
-                    </div>
-                    <div class="details">
-                        <div class="left">
-                            <p class="title">Tir - Admin side</p>
-                            <p class="date">2020 - October</p>
-                        </div>
-
-                    </div>
-                    <div class="tags">
-                        <div class="tag">
-                            <p>Laravel</p>
-                        </div>
-                        <div class="tag">
-                            <p>MySql</p>
-                        </div>
-                        <div class="tag">
-                            <p>Bootstrap</p>
-                        </div>
-                    </div>
-                    <div class="description">
-                        Organizing agency Offers, and Providing a structured control to the database
-                        <br> you can access this section as admin, or as worker
-                        <br> as Admin::
-                        
-                        <br> you are able to
-                        <ul>
-                            <li>Add, Edit, Delete, View data</li>
-                            <li>Receive emails for Omra procedure</li>
-                            <li>adding Users (admin required)</li>
-                            <li>View Analetics</li>
-                        </ul>
-                        <br> 
-                        <p class="red" style="color:tomato">email: admin@admin.com</p>
-                        <p class="red" style="color:tomato">psswd: password</p>
-                    </div>
-
-                    <div class="visit">
-                        <a href="https://quiet-savannah-26910.herokuapp.com/login" target="_blank"><button>Visit </button></a>
-                    </div>
-
-                </div>
-            </div>
-            <div class="overlay" nth-modal="1" onclick="closeMadeModal(this)"></div>
-            <button class="btn btn--open">Open</button>
-        </div>
-
-        <div class="modal-container">
-            <div class="modal modal-left">
-                <div class="modal__content">
-                    <div class="image">
-                        <img src="./works/saav/saav1_result.png" alt="">
-                    </div>
-                    <div class="dots">
-                        <span>.</span>
-                        <span>.</span>
-                        <span>.</span>
-                    </div>
-                    <div class="details">
-                        <div class="left">
-                            <p class="title">SaavyWorld-official</p>
-                            <p class="date">2020 - November</p>
-                        </div>
-
-                    </div>
-                    <div class="tags">
-                        <div class="tag">
-                            <p>Laravel</p>
-                        </div>
-                        <div class="tag">
-                            <p>MailChimp</p>
-                        </div>
-                        <div class="tag">
-                            <p>Bootstrap</p>
-                        </div>
-                        <div class="tag">
-                            <p>Hosted</p>
-                        </div>
-                    </div>
-                    <div class="description">
-                        Saav, rapper and an artist based in NYC, aimed to give a push for his brand,
-                        <br> a place where he can provide his latest work and updates
-                        <br> Available Section
-                        <ul>
-                            <li>Main</li>
-                            <li>Music</li>
-                            <li>Merch</li>
-                            <li>Visuals</li>
-                            <li>Art</li>
-                        </ul>
-                    </div>
-
-                    <div class="visit">
-                        <a href="https://www.saavyworld.com/" target="_blank"><button>Visit </button></a>
-                    </div>
-
-                </div>
-            </div>
-            <div class="overlay" nth-modal="2" onclick="closeMadeModal(this)"></div>
-            <button class="btn btn--open">Open</button>
-        </div>
-
-        <div class="modal-container">
-            <div class="modal modal-left">
-                <div class="modal__content">
-                    <div class="image">
-                        <img src="./works/portfolio/jervi_result.png" alt="">
-                    </div>
-                    <div class="dots">
-                        <span>.</span>
-                        <span>.</span>
-                        <span>.</span>
-                    </div>
-                    <div class="details">
-                        <div class="left">
-                            <p class="title">Jervi</p>
-                            <p class="date">2021 - March</p>
-                        </div>
-
-                    </div>
-                    <div class="tags">
-                        <div class="tag">
-                            <p>pure</p>
-                        </div>
-                        <div class="tag">
-                            <p>css</p>
-                        </div>
-                        <div class="tag">
-                            <p>js</p>
-                        </div>
-                    </div>
-                    <div class="description">
-                        No description,
-                        <br> Made with only CSS, and Paralax
-                        <br> Remark: template isn't responsive
-                    </div>
-
-                    <div class="visit">
-                        <a href="https://jervi.netlify.app/" target="_blank"><button>Visit </button></a>
-                    </div>
-
-                </div>
-            </div>
-            <div class="overlay" nth-modal="3" onclick="closeMadeModal(this)"></div>
-            <button class="btn btn--open">Open</button>
-        </div>
-
-        <div class="modal-container">
-            <div class="modal modal-left">
-                <div class="modal__content">
-                    <div class="image">
-                        <img src="./works/zoom/zoom.png" alt="">
-                    </div>
-                    <div class="dots">
-                        <span>.</span>
-                        <span>.</span>
-                        <span>.</span>
-                    </div>
-                    <div class="details">
-                        <div class="left">
-                            <p class="title">Zoom Clone</p>
-                            <p class="date">2021 - March</p>
-                        </div>
-
-                    </div>
-                    <div class="tags">
-                        <div class="tag">
-                            <p>NodeJs</p>
-                        </div>
-                        <div class="tag">
-                            <p>P2P</p>
-                        </div>
-                    </div>
-                    <div class="description">
-                        Basic video chat room, no need register for joining a chat,
-                        <br>
-                    </div>
-
-                    <div class="visit">
-                        <a>
-                            <button id="shake-btn" class="disabled" onclick="shake()">
-                                <span class="default btn-caption">Visit</span><span class="error btn-caption">in Fixing bugs - sorry -</span>
-                            </button></div>
-                        </a>
-                    </div>
-            </div>
-            <div class="overlay" nth-modal="4" onclick="closeMadeModal(this)"></div>
-            <button class="btn btn--open">Open</button>
-        </div>
-
-
-
-        <div class="modal-container">
-            <div class="modal modal-right">
-                <div class="modal__content">
-                    <div class="image">
-                        <img src="./works/portfolio/jerviV2_result.png" alt="">
-                    </div>
-                    <div class="dots">
-                        <span>.</span>
-                        <span>.</span>
-                        <span>.</span>
-                    </div>
-                    <div class="details">
-                        <div class="left">
-                            <p class="title">Current Portfolio</p>
-                            <p class="date">2021 - April</p>
-                        </div>
-
-                    </div>
-                    <div class="tags">
-                        <div class="tag">
-                            <p>pure</p>
-                        </div>
-                        <div class="tag">
-                            <p>Mail</p>
-                        </div>
-                        <div class="tag">
-                            <p>Css</p>
-                        </div>
-                    </div>
-                    <div class="description">
-                        Made with only CSS, wanted to try synthwave approiche, Currently m using it as a portfolio
-                        <br> next steps to cover
-                        <ul>
-                            <li>Use reactjs to make it dynamic with a json datebase</li>
-                            <li>instead of receiving email, make it sends a facebook message</li>
-                            <li>make a racing game maybe</li>
-                            <li>maybe animate the road</li>
-                        </ul>
-                    </div>
-
-                    <div class="visit">
-                        <a href="https://gacem.netlify.app/" target="_blank"><button>Visit</button></a>
-                    </div>
-                    <script>
-                        
-                    </script>
-                </div>
-            </div>
-            <div class="overlay" nth-modal="0" onclick="closeProcessModal(this)"></div>
-            <button class="btn btn--open">Open</button>
-        </div>
-
-        <div class="modal-container">
-            <div class="modal modal-right">
-                <div class="modal__content">
-                    <div class="image">
-                        <img src="./works/portfolio/portfolio1_result.png" alt="">
-                    </div>
-                    <div class="dots">
-                        <span>.</span>
-                        <span>.</span>
-                        <span>.</span>
-                    </div>
-                    <div class="details">
-                        <div class="left">
-                            <p class="title">Porfolio for sofware dev</p>
-                            <p class="date">2021 - March</p>
-                        </div>
-
-                    </div>
-                    <div class="tags">
-                        <div class="tag">
-                            <p>react</p>
-                        </div>
-                    </div>
-                    <div class="description">
-                        in process
-                    </div>
-
-                    <div class="visit">
-                        <a href="https://portfolio-gacem.netlify.app" target="_blank"><button>Visit </button></a>
-                    </div>
-
-                </div>
-            </div>
-            <div class="overlay" nth-modal="1" onclick="closeProcessModal(this)"></div>
-            <button class="btn btn--open">Open</button>
-        </div>
-
-        <div class="modal-container">
-            <div class="modal modal-right">
-                <div class="modal__content">
-                    <div class="image">
-                        <img src="./works/devchallenges/res.png" alt="">
-                    </div>
-                    <div class="dots">
-                        <span>.</span>
-                        <span>.</span>
-                        <span>.</span>
-                    </div>
-                    <div class="details">
-                        <div class="left">
-                            <p class="title">Collection of 60 webpages</p>
-                            <p class="date">2021 - January</p>
-                        </div>
-
-                    </div>
-                    <div class="tags">
-                        <div class="tag">
-                            <p>Depends on the challenge</p>
-                        </div>
-                    </div>
-                    <div class="description">
-                        trying to finish lot amount of websites projects provided by <a href="devchallenges.io">DevChallenges.io </a>,
-                        <br> this platform's challenges cover from front-end to back-end, aiming to turn a beginer developpers to more experinced with real world projects.
-                    </div>
-                    <ul>
-                        <li>
-                            <a href="https://1-404-not-found-jervi.netlify.app"></a> 404 not found </li>
-                        <li>
-                            <a href="https://2-team-page-jervi.netlify.app"></a> team page </li>
-                        <li>
-                            <a href="https://3-interior-consultant-jervi.netlify.app"></a> interior consultant </li>
-                        <li>
-                            <a href="https://4-recipe-page-jervi.netlify.app"></a> recipe page </li>
-                        <li>
-                            <a href="https://5-my-gallery-jervi.netlify.app"></a> my gallery </li>
-                        <li>
-                            <a href="https://6-checkout-page-jervi.netlify.app"></a> checkout page </li>
-                        <li>
-                            <a href="https://7-edie-homepage-jervi.netlify.app"></a> eide - homepage - </li>
-                        <li>
-                            <a href="https://8-portfolio-jervi.netlify.app"></a> portfolio </li>
-                        <li>
-                            <a href="https://9-button-component-jervi.netlify.app"></a> button component</li>
-                        <li>
-                            <a href="https://10-input-component-jervi.netlify.app"></a> input component </li>
-
-                    </ul>
-                    <div class="visit">
-                        <a href="https://devchallenges.io" target="_blank"><button>Visit devChallenges</button></a>
-                    </div>
-
-                </div>
-            </div>
-            <div class="overlay" nth-modal="2" onclick="closeProcessModal(this)"></div>
-            <button class="btn btn--open">Open</button>
-        </div>
-
-        <div class="modal-container">
-            <div class="modal modal-right">
-                <div class="modal__content">
-                    <div class="image">
-                        <img src="./works/inProcess/catApp.png" alt="">
-                    </div>
-                    <div class="dots">
-                        <span>.</span>
-                        <span>.</span>
-                        <span>.</span>
-                    </div>
-                    <div class="details">
-                        <div class="left">
-                            <p class="title">cat App with a plot twist</p>
-                            <p class="date">InProcess__</p>
-                        </div>
-
-                    </div>
-                    <div class="tags">
-                        <div class="tag">
-                            <p>React Native</p>
-                        </div>
-                        <div class="tag">
-                            <p>Flutter</p>
-                        </div>
-                        <div class="tag">
-                            <p>Android</p>
-                        </div>
-                        <div class="tag">
-                            <p>GraphQL</p>
-                        </div>
-                    </div>
-                    <div class="description">
-                        basically a social media for cats
-                    </div>
-
-                    <div class="visit">
-                        <a href="" target="_blank"><button disabled>Visit </button></a>
-                    </div>
-
-                </div>
-            </div>
-            <div class="overlay" nth-modal="3" onclick="closeProcessModal(this)"></div>
-            <button class="btn btn--open">Open</button>
-        </div>
-
         <div class="modal-container">
             <div class="modal modal-right">
                 <div class="modal__content">
@@ -982,13 +264,225 @@
             </div>
             <div class="overlay" onclick="CloseSideWork()"></div>
         </div>
-
-
-
-        
-
     </div>
 
+
+    <script>
+        var app = new Vue({
+            el: '#animationOnload',
+            methods: {
+                openMadeModal: function(id) {
+                    //var modals = document.getElementsByClassName('modal-left');
+                    //var index = d.getAttribute("nth-card");
+                    //var modal = modals[index];
+                    //modal.classList.add('modal--show');
+                    //openedModal = index;
+                }
+            },
+            data: {
+                skills: {
+                    0: {
+                        name: 'In use',
+                        tags: ['Laravel', 'React', 'Vuejs', 'Mysql', 'CSS', '.']
+                    },
+                    1: {
+                        name: 'side used',
+                        tags: ['Premiere Pro', 'Arduino', 'Android', 'Figma', 'Git', '.'],
+                    },
+                    2: {
+                        name: 'In learning',
+                        tags: ['React Native', 'Networks', 'WebRtc', 'Ui/Ux', 'GSaP', '.'],
+                    },
+                },
+                socials: {
+                    'github': 'https://github.com/Jervi-sir',
+                    'facebook': 'https://www.facebook.com/gacem.humen/',
+                    'youtube': 'https://www.youtube.com/channel/UCD-YOxxLv5yGhcerkZLGZgg',
+                    'instagram': 'https://www.instagram.com/gacem_humen/',
+                    'phone': [ 'tel:+213558054300' , '(+213) 558 05 43 00'],
+                    'email': ['mailto:gacembekhira@gmail.com', 'gacembekhira@gmail.com']
+                },
+                madeWorks: [
+                    {
+                        id: '1',
+                        thumbnail: './works/tir/tir1_result.png',
+                        image: './works/tir/tir1_result.png',
+                        title: 'Tir - travel Agency',
+                        date: '2020 - October',
+                        tags: ['Laravel', 'Stripe', 'MySql', 'Bootstrap', 'mail', 'cart'],
+                        description: 'description',
+                        link: 'url'
+                    },
+                    {
+                        id: '2',
+                        thumbnail: './works/tir/tir admin 1_result.png',
+                        image: './works/tir/tir admin 1_result.png',
+                        title: 'Tir - Admin side',
+                        date: '2020 - October',
+                        tags: ['Laravel', 'MySql', 'Bootstrap'],
+                        description: 'description',
+                        link: 'url'
+                    },
+                    {
+                        id: '3',
+                        thumbnail: './works/saav/saav1_result.png',
+                        image: './works/saav/saav1_result.png',
+                        title: 'SaavyWorld-official',
+                        date: '2020 - October',
+                        tags: ['Laravel', 'MySql', 'MailChimp', 'Bootstrap', 'Hosted'],
+                        description: 'description',
+                        link: 'url'
+                    },
+                    {
+                        id: '4',
+                        thumbnail: './works/portfolio/jervi2_result.png',
+                        image: './works/portfolio/jervi2_result.png',
+                        title: 'Jervi --',
+                        date: '2021 - March',
+                        tags: ['pure', 'css', 'js'],
+                        description: 'No description,\nMade with only CSS, and Paralax\nRemark: template isn\'t responsive',
+                        link: 'url'
+                    },
+                    {
+                        id: '5',
+                        thumbnail: './works/zoom/zoom.png',
+                        image: './works/zoom/zoom.png',
+                        title: 'Zoom Clone',
+                        date: '2021 - March',
+                        tags: ['p2p', 'Nodejs'],
+                        description: 'Basic video chat room, no need register for joining a chat,',
+                        link: 'url'
+                    },
+                    {
+                        id: '6',
+                        thumbnail: './works/hunt digits/hunt digits.png',
+                        image: './works/hunt digits/hunt digits.png',
+                        title: 'Hunt digits',
+                        date: '2021 - Sptember',
+                        tags: ['vuejs', 'Nodejs', 'webscrape'],
+                        description: 'hunt best prices,',
+                        link: 'https://hunt-digits.herokuapp.com/'
+                    },
+                    {
+                        id: '7',
+                        thumbnail: './works/2kings/2kings.png',
+                        image: './works/2kings/2kings.png',
+                        title: '2Kings',
+                        date: '2021 - September',
+                        tags: ['pure', 'js', 'CSS'],
+                        description: 'My company landing page,',
+                        link: 'https://2kings-websites.netlify.app/'
+                    },
+                    {
+                        id: '8',
+                        thumbnail: './works/o2dz/o2dz.png',
+                        image: './works/o2dz/o2dz.png',
+                        title: 'O2dz',
+                        date: '2021 - August',
+                        tags: ['Laravel'],
+                        description: 'where to find and propose oxygen (deleted db),',
+                        link: 'https://o2dz.com/'
+                    },
+                    {
+                        id: '9',
+                        thumbnail: './works/atlas/atlas club.png',
+                        image: './works/atlas/atlas club.png',
+                        title: 'Atlas registration',
+                        date: '2021 - September',
+                        tags: ['pure', 'netlify'],
+                        description: 'form registration for atlas,',
+                        link: 'https://atlas-club.netlify.app/'
+                    },
+                   
+                    
+                ],
+                processWorks: [
+                    {
+                        id: '1',
+                        thumbnail: './works/portfolio/jerviV2_result.png',
+                        image: './works/portfolio/jerviV2_result.png',
+                        title: 'Current Portfolio',
+                        date: '2021 - April',
+                        tags: ['pure', 'css', 'js'],
+                        description: 'No description,\nMade with only CSS, and Paralax\nRemark: template isn\'t responsive',
+                        link: 'url'
+                    },
+                    {
+                        id: '2',
+                        thumbnail: './works/portfolio/portfolio1_result.png',
+                        image: './works/portfolio/portfolio1_result.png',
+                        title: 'Porfolio for software',
+                        date: '2021 - March',
+                        tags: ['vueJs'],
+                        description: 'No description,\nMade with only CSS, and Paralax\nRemark: template isn\'t responsive',
+                        link: 'url'
+                    },
+                    {
+                        id: '3',
+                        thumbnail: './works/devchallenges/res.png',
+                        image: './works/devchallenges/res.png',
+                        title: 'Collection of 60 webpages',
+                        date: '2021 - April',
+                        tags: ['pure', 'css', 'js'],
+                        description: 'No description,\nMade with only CSS, and Paralax\nRemark: template isn\'t responsive',
+                        link: 'url'
+                    },
+                    {
+                        id: '4',
+                        thumbnail: './works/inProcess/catApp.png',
+                        image: './works/inProcess/catApp.png',
+                        title: 'cat App wit ha plot twist',
+                        date: 'InProcess__',
+                        tags: ['Laravel', 'Vuejs', 'api'],
+                        description: 'No description,\nMade with only CSS, and Paralax\nRemark: template isn\'t responsive',
+                        link: 'url'
+                    },
+                    {
+                        id: '5',
+                        thumbnail: './works/portfolio/jervi2_result.png',
+                        image: './works/portfolio/jervi2_result.png',
+                        title: 'Taxi trip Organizer Covid',
+                        date: 'Canceled__',
+                        tags: ['Laravel', 'api'],
+                        description: 'No description,\nMade with only CSS, and Paralax\nRemark: template isn\'t responsive',
+                        link: 'url'
+                    },
+                    {
+                        id: '6',
+                        thumbnail: './works/resvona/boxy.png',
+                        image: './works/resvona/boxy.png',
+                        title: 'Resvona Boxy',
+                        date: '2021 - October',
+                        tags: ['vuejs', 'Laravel', 'api'],
+                        description: 'Connect peoples,',
+                        link: 'url'
+                    },
+                    {
+                        id: '7',
+                        thumbnail: './works/best price/best price.png',
+                        image: './works/best price/best price.png',
+                        title: 'Bst prices',
+                        date: '2021 - September',
+                        tags: ['pure', 'front only'],
+                        description: 'Hunt the best prices,',
+                        link: 'url'
+                    },
+                    {
+                        id: '8',
+                        thumbnail: './works/toks/toks.png',
+                        image: './works/toks/toks.png',
+                        title: 'toks platform',
+                        date: '2021 - September',
+                        tags: ['laravel', 'payment'],
+                        description: 'Platform where you can buy toks courses,',
+                        link: 'url'
+                    },
+                    
+                ]
+            }
+        })
+    </script>
+    
     <script>
         'use strict';
 
@@ -1040,14 +534,6 @@
             setTimeout(function() {
                 document.getElementById("shake-btn").classList.remove("shake");
             }, 3000);
-        }
-
-        function openMadeModal(d) {
-            var modals = document.getElementsByClassName('modal-left');
-            var index = d.getAttribute("nth-card");
-            var modal = modals[index];
-            modal.classList.add('modal--show');
-            openedModal = index;
         }
 
         function closeMadeModal(d) {

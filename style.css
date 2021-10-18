@@ -11,6 +11,7 @@
     --d-color: #E68E36;
     --b-color: #556DC8;
     --a-color: #7998EE;
+     --e-color:#556ec875;
 }
 
 
@@ -101,7 +102,7 @@ body {
     animation: 1.5s ease-out 0s 1 shawodAnimate;
 }
 
-#form-contact .socials {
+.socials {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -110,7 +111,7 @@ body {
     border: 1px solid var(--d-color);
 }
 
-#form-contact .socials a {
+.socials a {
     color: white;
     font-size: 0.9rem;
     margin: 5px 0;
