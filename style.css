@@ -1296,6 +1296,14 @@ main div p:after {
         width: 100%;
         text-align: center;
     }
+    
+    .find-me {
+        text-align: center;
+    }
+
+    .find-me .right a{
+        flex: 1;
+    }
 
     .work .container {
         display: grid;
@@ -1326,6 +1334,15 @@ main div p:after {
     .work .container.left {
         width: 100%;
     }
+
+    .find-me {
+        text-align: center;
+    }
+
+    .find-me .right a{
+        flex: 1;
+    }
+
     .work .card {
         width: 100%;
         margin-bottom: 1rem;
