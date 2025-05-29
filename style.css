@@ -93,8 +93,8 @@ body {
 .body {
     position: relative;
     width: 35%;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
     z-index: 10;
     margin: auto;
     margin-top: 3rem;
@@ -792,6 +792,59 @@ body {
 
 
 /*      Modal       */
+/* PDF Modal Styles */
+.pdf-modal {
+    max-width: 800px;
+    width: 90%;
+    background: #1a1a3d; /* Dark background to match synthwave vibe */
+    border: 2px solid #ff00ff; /* Neon pink border */
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.pdf-modal h2 {
+    color: #00ffcc; /* Neon cyan text */
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+}
+
+.pdf-preview {
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.pdf-preview iframe {
+    display: block;
+    border: none;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.modal-actions button {
+    background: #ff00ff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.modal-actions button:hover {
+    background: #00ffcc;
+    color: #1a1a3d;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.7);
+}
 
 .modal-container {
     display: flex;

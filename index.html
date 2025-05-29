@@ -2,612 +2,618 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <link rel="icon" href="./sunset.gif" type="image/gif" >
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <link rel="icon" href="./sunset.gif" type="image/gif">
 
-    <title>Jervi</title>
+  <title>Jervi</title>
 </head>
 
 <body>
-    <div class="graph"></div>
+  <div class="graph"></div>
 
-    <div class="sunset">
-        <img src="./sunset.gif" alt="">
+  <div class="sunset">
+    <img src="./sunset.gif" alt="">
+  </div>
+  <div class="body" id="animationOnload">
+    <!-- Profile -->
+    <div class="profile">
+
+      <div class="image">
+        <img src="./1.png">
+      </div>
+      <div class="name">
+        <p>Gacem</p>
+        <span>aka Jervi</span>
+      </div>
     </div>
-    <div class="body" id="animationOnload">
-        <!-- Profile -->
-        <div class="profile">
 
-            <div class="image">
-                <img src="./1.png">
-            </div>
-            <div class="name">
-                <p>Gacem</p>
-                <span>aka Jervi</span>
-            </div>
+    <!--  Details  -->
+    <div class="profile-detail">
+      <div class="left">
+        <h1>Hi, <span>I'm Gacem</span></h1>
+        <p>a Web Developer</p>
+        <p>& Video Creator</p>
+      </div>
+      <div class="right">
+        <p>Describe your project idea</p>
+        <div class="contact-btn">
+          <a class="white" href="#contactMe" onclick="contact()">
+            <p><span class="bg"></span><span class="base"></span><span class="text">Contact me...</span></p>
+          </a>
         </div>
-
-        <!--  Details  -->
-        <div class="profile-detail">
-            <div class="left">
-                <h1>Hi, <span>I'm Gacem</span> </h1>
-                <p>a Web Developper</p>
-                <p>& Video Creator</p>
-            </div>
-            <div class="right">
-                <p>Describe your project idea</p>
-                <div class="contact-btn">
-                    <a class="white" href="#contactMe" onclick="contact()">
-                        <p><span class="bg"></span><span class="base"></span><span class="text">Contact me...</span></p>
-                    </a>
-
-                </div>
-            </div>
+        <!-- New Button to Open PDF -->
+        <div class="contact-btn">
+          <a class="white" href="./portfolio.pdf" target="_blank">
+            <p><span class="bg"></span><span class="base"></span><span class="text">View Portfolio PDF</span></p>
+          </a>
         </div>
+      </div>
+    </div>
 
-        <!--  Skills   -->
-        <div class="skills">
-            <h1>SKILLs and Techs provided</h1>
-            <p>For now, only value I provided is by turning your business idea into website,<br> from e-commerce or more complicated to simple one as one page site</p>
-            <div class="container">
-                <div class="column" v-for="skill in skills">
-                    <p>{{ skill.name }}</p>
-                    <ul>
-                        <li v-for="tag in skill.tags">{{tag}}</li>
-                    </ul>
-                </div>
-            </div>
+    <!--  Skills   -->
+    <div class="skills">
+      <h1>SKILLs and Techs provided</h1>
+      <p>For now, only value I provided is by turning your business idea into website,<br> from e-commerce or more
+        complicated to simple one as one page site</p>
+      <div class="container">
+        <div class="column" v-for="skill in skills">
+          <p>{{ skill.name }}</p>
+          <ul>
+            <li v-for="tag in skill.tags">{{tag}}</li>
+          </ul>
         </div>
+      </div>
+    </div>
 
-        <!--  Where To find me   -->
-        <div class="find-me">
-            <h2>Where to find me</h2>
-            <div class="container">
+    <!--  Where To find me   -->
+    <div class="find-me">
+      <h2>Where to find me</h2>
+      <div class="container">
 
-                <div class="left">
-                    <div class="row-find">
-                        <i class="fa fa-phone" aria-hidden="true"></i>
-                        <a :href="socials['phone'][0]">{{ socials['phone'][1] }}</a>
-                    </div>
-                    <div class="row-find">
-                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                        <a :href="socials['email'][0]">{{ socials['email'][1] }}</a>
-                    </div>
-                </div>
-                <div class="right">
-                    <a :href="socials['github']" target="_blanc"><i class="fa fa-github icon" aria-hidden="true"></i></a>
-                    <a :href="socials['facebook']" target="_blanc"><i class="fa fa-facebook icon" aria-hidden="true"></i></a>
-                    <a :href="socials['linkedin']" target="_blanc"><i class="fa fa-linkedin icon" aria-hidden="true"></i></a>
-                    <a :href="socials['instagram']" target="_blanc"><i class="fa fa-instagram icon" aria-hidden="true"></i></a>
-                </div>
-            </div>
-            <!--
+        <div class="left">
+          <div class="row-find">
+            <i class="fa fa-phone" style="font-size: 14px;" aria-hidden="true"></i>
+            <a :href="socials['phone'][0]">{{ socials['phone'][1] }}</a>
+          </div>
+          <div class="row-find">
+            <i class="fa fa-envelope" style="font-size: 14px;" aria-hidden="true"></i>
+            <a :href="socials['email'][0]">{{ socials['email'][1] }}</a>
+          </div>
+        </div>
+        <div class="right">
+          <a :href="socials['github']" target="_blanc"><i class="fa fa-github icon" aria-hidden="true"></i></a>
+          <a :href="socials['facebook']" target="_blanc"><i class="fa fa-facebook icon" aria-hidden="true"></i></a>
+          <a :href="socials['linkedin']" target="_blanc"><i class="fa fa-linkedin icon" aria-hidden="true"></i></a>
+          <a :href="socials['instagram']" target="_blanc"><i class="fa fa-instagram icon" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <!--
             <div class="socials">
                 <a href="tel:"><i class="fa fa-phone" aria-hidden="true"></i>{{ socials['instagram'] }}</a>
                 <a href="mailto:gacembekhira.personal@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i>socials['email']</a>
                 <a href="https://www.facebook.com/gacem.humen/" target="_blanc"><i class="fa fa-facebook icon" aria-hidden="true"></i>acebook</a>
             </div>
             -->
-        </div>
-
-        <!--  Book a session  -->
-        <div class="contact-me hide-contact" id="contactMe">
-            <h1>Book a session </h1>
-            <form method="POST" action="" id="form-contact" netlify>
-                <div class="box">
-                    <label for="email">Enter Your Email Address</label>
-                    <input name="email" type="email" class="input-box">
-                </div>
-                <div class="box">
-                    <label for="subject">Lemme know your name <span>( optional )</span> </label>
-                    <input name="name" type="text" class="input-box">
-                </div>
-                <div class="box">
-                    <label for="email">Your Enquiry</label>
-                    <textarea name="message" id="" cols="30" rows="10"></textarea>
-                </div>
-                <div class="box">
-                    <button type="submit" class="form-button">Submit</button>
-                </div>
-
-            </form>
-        </div>
-
-        <!--  My Works  -->
-        <div class="work">
-            <h1>Collection </h1>
-
-            <div class="switch-button"><span class="active"></span>
-                <button class="switch-button-case left active-case">Made</button>
-                <button class="switch-button-case right">In process</button>
-            </div>
-            <div class="wrapper">
-                <div class="big-container" id="move-container">
-                    <div id="container-left" class="container left">
-                        <div class="card" v-for="work in madeWorks" :key="work.id">
-                            <div class="top">
-                                <div class="image">
-                                    <img :src="work.thumbnail" alt="">
-                                </div>
-                                <div class="details">
-                                    <div class="left">
-                                        <p class="title">{{ work.title }}</p>
-                                        <p class="date">{{ work.date }}</p>
-                                    </div>
-                                </div>
-                                <div class="tags">
-                                    <div class="tag" v-for="tag in work.tags">
-                                        <p>{{ tag }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="check-detail">
-                                <button @click="openMadeModal(work.id)">Check for more details</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="container-right" class="container right ">
-                        <div class="card" v-for="work in processWorks" :key="work.id">
-                            <div class="top">
-                                <div class="image">
-                                    <img :src="work.thumbnail" alt="">
-                                </div>
-                                <div class="details">
-                                    <div class="left">
-                                        <p class="title">{{ work.title }}</p>
-                                        <p class="date">{{ work.date }}</p>
-                                    </div>
-                                </div>
-                                <div class="tags">
-                                    <div class="tag" v-for="tag in work.tags">
-                                        <p>{{ tag }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="check-detail">
-                                <button @click="openProcessModal(work.id)">Check for more details</button>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="side-work">
-            <h3>? WANNA SEE a surprise ?</h3>
-            <div class="button">
-                <button class=".side-work" onclick="OpenSideWork()"><span>OPEN</span></button>
-            </div>
-        </div>
-        <div class="jervi">
-            <main>
-                <div>
-                    <p data-text="Jervi">Jervi</p>
-                </div>
-            </main>
-        </div>
-
-        <!-- Modal   -->
-        <div id="modal" class="modal-container">
-            <div class="modal modal-target">
-                <div class="modal__content">
-                    <div class="image">
-                        <img :src="modal.image" alt="">
-                    </div>
-                    <div class="dots">
-                        <span>.</span>
-                        <span>.</span>
-                        <span>.</span>
-                    </div>
-                    <div class="details">
-                        <div class="left">
-                            <p class="title">{{modal.title}}</p>
-                            <p class="date">{{modal.date}}</p>
-                        </div>
-
-                    </div>
-                    <div class="tags">
-                        <div class="tag" v-for="tag in modal.tags">
-                            <p>{{ tag }}</p>
-                        </div>
-                    </div>
-                    <div class="description" v-html="modal.description">
-                    </div>
-                    <div class="visit">
-                        <a :href="modal.link" target="_blank"><button>Visit </button></a>
-                    </div>
-
-                </div>
-            </div>
-            <div class="overlay" nth-modal="4" @click="closeProcessModal"></div>
-        </div>
-
-        <!--  Side Work   -->
-        <div class="modal-container">
-            <div class="modal " id="modal-side-work">
-                <div class="modal__content">
-                    <div class="image">
-                        <a href="./works/jervi_bike.gif" target="_blank">
-                            <img src="./works/jervi_bike.gif" alt="">
-                        </a>
-                        <h3>I do have this Humor, But its valuable</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="overlay" onclick="CloseSideWork()"></div>
-        </div>
     </div>
 
-    <script>
-        var app = new Vue({
-            el: '#animationOnload',
-            methods: {
-                openMadeModal: function(id) {
-                    id = id - 1;
-                    this.modal.thumbnail = this.madeWorks[id].thumbnail;
-                    this.modal.image = this.madeWorks[id].image;
-                    this.modal.title = this.madeWorks[id].title;
-                    this.modal.date = this.madeWorks[id].date;
-                    this.modal.tags = this.madeWorks[id].tags;
-                    this.modal.description = this.madeWorks[id].description;
-                    this.modal.link = this.madeWorks[id].link;
+    <!--  Book a session  -->
+    <div class="contact-me hide-contact" id="contactMe">
+      <h1>Book a session </h1>
+      <form method="POST" action="" id="form-contact" netlify>
+        <div class="box">
+          <label for="email">Enter Your Email Address</label>
+          <input name="email" type="email" class="input-box">
+        </div>
+        <div class="box">
+          <label for="subject">Lemme know your name <span>( optional )</span> </label>
+          <input name="name" type="text" class="input-box">
+        </div>
+        <div class="box">
+          <label for="email">Your Enquiry</label>
+          <textarea name="message" id="" cols="30" rows="10"></textarea>
+        </div>
+        <div class="box">
+          <button type="submit" class="form-button">Submit</button>
+        </div>
 
-                    var modal = document.getElementsByClassName('modal-target')[0];
-                    modal.classList.add('modal--show');
-                },
-                openProcessModal: function(id) {
-                    id = id - 1;
-                    this.modal.thumbnail = this.processWorks[id].thumbnail;
-                    this.modal.image = this.processWorks[id].image;
-                    this.modal.title = this.processWorks[id].title;
-                    this.modal.date = this.processWorks[id].date;
-                    this.modal.tags = this.processWorks[id].tags;
-                    this.modal.description = this.processWorks[id].description;
-                    this.modal.link = this.processWorks[id].link;
+      </form>
+    </div>
 
-                    var modal = document.getElementsByClassName('modal-target')[0];
-                    modal.classList.add('modal--show');
-                },
-                closeProcessModal: function() {
-                    var modal = document.getElementsByClassName('modal-target')[0];
-                    modal.classList.remove('modal--show');
-                }
+    <!--  My Works  -->
+    <div class="work">
+      <h1>Collection </h1>
 
-            },
-            data: {
-                skills: {
-                    0: {
-                        name: 'In use',
-                        tags: ['Laravel', 'Vuejs', 'Dmeme', 'Firebase', '.']
-                    },
-                    1: {
-                        name: 'side used',
-                        tags: ['React Native', 'Premiere Pro', 'Arduino', 'Figma', '.'],
-                    },
-                    2: {
-                        name: 'In learning',
-                        tags: ['the GPT-3', 'Blockchain', 'Tauri', 'Rust', '.'],
-                    },
-                },
-                socials: {
-                    'github': 'https://github.com/Jervi-sir',
-                    'facebook': 'https://www.facebook.com/gacem.humen/',
-                    'linkedin': 'https://www.linkedin.com/in/jervi-sir-84a74b1a2/',
-                    'instagram': 'https://www.instagram.com/gacem_humen/',
-                    'phone': ['tel:+213558054300', '(+213) 558 05 43 00'],
-                    'email': ['mailto:gacembekhira@gmail.com', 'gacembekhira@gmail.com']
-                },
-                modal: {
-                    thumbnail: '',
-                    image: '',
-                    title: '',
-                    date: '',
-                    tags: '',
-                    description: '',
-                    link: ''
-                },
-                madeWorks: [{
-                    id: '1',
-                    thumbnail: './works/tir/tir1_result.png',
-                    image: './works/tir/tir1_result.png',
-                    title: 'Tir - travel Agency',
-                    date: '2020 - October',
-                    tags: ['Laravel', 'Stripe', 'MySql', 'Bootstrap', 'mail', 'cart'],
-                    description: 'Offering Hotel, Car renting, plane ticket purchase, Omra services<br> Comes with an online payment with STRIPE, and a reservation cart, similar idea with Shopping cart<br> you are able to<ul><li>sign in and log in</li><li>purchase an order</li><li>cancel possible reservations</li><li>save and print reservation\'s tickets</li><li>send emails</li><li>reset password</li><li></li></ul>To pay for an offre enter Stipe\'s code : 4242424242424242424242',
-                    link: 'https://tir-agency-2kings.herokuapp.com/'
-                }, {
-                    id: '2',
-                    thumbnail: './works/saav/saav1_result.png',
-                    image: './works/saav/saav1_result.png',
-                    title: 'SaavyWorld-official',
-                    date: '2020 - October',
-                    tags: ['Laravel', 'MySql', 'MailChimp', 'Bootstrap', 'Hosted'],
-                    description: 'Saav, rapper and an artist based in NYC, aimed to give a push for his brand,<br> a place where he can provide his latest work and updates<br> Available Section<ul><li>Main</li><li>Music</li><li>Merch</li><li>Visuals</li><li>Art</li></ul>',
-                    link: 'https://saavyworld.com/'
-                }, {
-                    id: '3',
-                    thumbnail: './works/portfolio/jervi2_result.png',
-                    image: './works/portfolio/jervi2_result.png',
-                    title: 'Jervi --',
-                    date: '2021 - March',
-                    tags: ['pure', 'css', 'js'],
-                    description: 'No description,<br> Made with only CSS, and Paralax<br> Remark: template isn\'t responsive',
-                    link: 'https://jervi.netlify.app'
-                }, {
-                    id: '4',
-                    thumbnail: './works/hunt digits/hunt digits.png',
-                    image: './works/hunt digits/hunt digits.png',
-                    title: 'Hunt digits',
-                    date: '2021 - Sptember',
-                    tags: ['vuejs', 'Nodejs', 'webscrape'],
-                    description: 'hunt best prices,',
-                    link: 'https://hunt-digits.herokuapp.com/'
-                }, {
-                    id: '5',
-                    thumbnail: './works/2kings/2kings.png',
-                    image: './works/2kings/2kings.png',
-                    title: '2Kings',
-                    date: '2021 - September',
-                    tags: ['pure', 'js', 'CSS'],
-                    description: 'My company landing page,',
-                    link: 'https://2kings-websites.netlify.app/'
-                }, {
-                    id: '6',
-                    thumbnail: './works/o2dz/o2dz.png',
-                    image: './works/o2dz/o2dz.png',
-                    title: 'O2dz',
-                    date: '2021 - August',
-                    tags: ['Laravel'],
-                    description: 'where to find and propose oxygen (deleted db),',
-                    link: 'https://o2dz.com/'
-                }, {
-                    id: '7',
-                    thumbnail: './works/atlas/atlas_club.png',
-                    image: './works/atlas/atlas_club.png',
-                    title: 'Atlas registration',
-                    date: '2021 - September',
-                    tags: ['pure', 'netlify'],
-                    description: 'form registration for atlas,',
-                    link: 'https://atlas-club.netlify.app/'
-                }, {
-                    id: '8',
-                    thumbnail: './works/passwordStorage/password_storage.png',
-                    image: './works/passwordStorage/password_storage.png',
-                    title: 'Password Storage',
-                    date: '2021 - September',
-                    tags: ['Laravel', 'Tailwind'],
-                    description: 'Platform to store your password, but dont use it, even it comes with authentication roles, but still no trust in me',
-                    link: 'http://pssd-strg.herokuapp.com/'
-                }, 
-            
-                ],
-                processWorks: [{
-                        id: '1',
-                        thumbnail: './works/portfolio/jerviV2_result.png',
-                        image: './works/portfolio/jerviV2_result.png',
-                        title: 'Current Portfolio',
-                        date: '2021 - April',
-                        tags: ['pure', 'css', 'js'],
-                        description: 'Made with only CSS, wanted to try synthwave approiche, Currently m using it as a portfolio<br> next steps to cover<ul><li>Use vuejs to make it dynamic with a json datebase [done]</li><li>send email with nelify [done]</li><li>make a racing game maybe</li><li>maybe animate the road</li></ul>',
-                        link: 'https://gacem.netlify.app'
-                    }, {
-                        id: '2',
-                        thumbnail: './works/portfolio/portfolio1_result.png',
-                        image: './works/portfolio/portfolio1_result.png',
-                        title: 'Porfolio for software',
-                        date: '2021 - March',
-                        tags: ['vueJs'],
-                        description: 'in process',
-                        link: 'https://portfolio-gacem.netlify.app'
-                    }, {
-                        id: '3',
-                        thumbnail: './works/devchallenges/res.png',
-                        image: './works/devchallenges/res.png',
-                        title: 'Collection of 60 webpages',
-                        date: '2021 - April',
-                        tags: ['pure', 'css', 'js'],
-                        description: 'trying to finish lot amount of websites projects provided by <a href="devchallenges.io">DevChallenges.io </a>,<br> this platform\'s challenges cover from front-end to back-end, aiming to turn a beginer developpers to more experinced with real world projects.',
-                        link: ''
-                    }, {
-                        id: '4',
-                        thumbnail: './works/inProcess/catApp.png',
-                        image: './works/inProcess/catApp.png',
-                        title: 'cat App wit ha plot twist',
-                        date: 'InProcess__',
-                        tags: ['Laravel', 'Vuejs', 'api'],
-                        description: 'No description',
-                        link: ''
-                    }, {
-                        id: '5',
-                        thumbnail: './works/inProcess/taxi.png',
-                        image: './works/portfolio/jervi2_result.png',
-                        title: 'Taxi trip Organizer Covid',
-                        date: 'Canceled__',
-                        tags: ['Laravel', 'api'],
-                        description: 'wanted to solve issue with ppl who cannot find taxi between wilayat, during covid<br> enforently the project was canceled due to the situation has been changed, and motivation ra7t',
-                        link: ''
-                    }, {
-                        id: '6',
-                        thumbnail: './works/resvona/boxy.png',
-                        image: './works/resvona/boxy.png',
-                        title: 'Resvona Boxy',
-                        date: '2021 - October',
-                        tags: ['vuejs', 'Laravel', 'api'],
-                        description: 'Connect peoples,',
-                        link: 'https://boxydz.netlify.app'
-                    }, {
-                        id: '7',
-                        thumbnail: './works/best price/best price.png',
-                        image: './works/best price/best price.png',
-                        title: 'Bst prices',
-                        date: '2021 - September',
-                        tags: ['pure', 'front only'],
-                        description: 'Hunt the best prices,',
-                        link: 'https://best-price.netlify.app'
-                    }, {
-                        id: '8',
-                        thumbnail: './works/toks/toks.png',
-                        image: './works/toks/toks.png',
-                        title: 'toks platform',
-                        date: '2021 - September',
-                        tags: ['laravel', 'payment'],
-                        description: 'Platform where you can buy toks courses,',
-                        link: 'https://tradertoks.herokuapp.com/'
-                    }, {
-                        id: '9',
-                        thumbnail: './works/forum/main.png',
-                        image: './works/forum/main.png',
-                        title: 'dev platform',
-                        date: '2021 - September',
-                        tags: ['laravel', 'payment'],
-                        description: 'Platform of devs,',
-                        link: 'https://dev-1954.herokuapp.com/'
-                    }, {
-                        id: '10',
-                        thumbnail: './works/forum/main.png',
-                        image: './works/forum/main.png',
-                        title: 'Platform where to buy tickets, and sell them too as an agency',
-                        date: 'in process',
-                        tags: ['laravel', 'payment dz', 'purest html css'],
-                        description: 'Aratiki,',
-                        link: '#'
-                    },
+      <div class="switch-button"><span class="active"></span>
+        <button class="switch-button-case left active-case">Made</button>
+        <button class="switch-button-case right">In process</button>
+      </div>
+      <div class="wrapper">
+        <div class="big-container" id="move-container">
+          <div id="container-left" class="container left">
+            <div class="card" v-for="work in madeWorks" :key="work.id">
+              <div class="top">
+                <div class="image">
+                  <img :src="work.thumbnail" alt="">
+                </div>
+                <div class="details">
+                  <div class="left">
+                    <p class="title">{{ work.title }}</p>
+                    <p class="date">{{ work.date }}</p>
+                  </div>
+                </div>
+                <div class="tags">
+                  <div class="tag" v-for="tag in work.tags">
+                    <p>{{ tag }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="check-detail">
+                <button @click="openMadeModal(work.id)">Check for more details</button>
+              </div>
+            </div>
+          </div>
 
-                ]
-            }
-        })
-    </script>
+          <div id="container-right" class="container right ">
+            <div class="card" v-for="work in processWorks" :key="work.id">
+              <div class="top">
+                <div class="image">
+                  <img :src="work.thumbnail" alt="">
+                </div>
+                <div class="details">
+                  <div class="left">
+                    <p class="title">{{ work.title }}</p>
+                    <p class="date">{{ work.date }}</p>
+                  </div>
+                </div>
+                <div class="tags">
+                  <div class="tag" v-for="tag in work.tags">
+                    <p>{{ tag }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="check-detail">
+                <button @click="openProcessModal(work.id)">Check for more details</button>
+              </div>
+            </div>
 
-    <script>
-        'use strict';
+          </div>
 
-        var switchButton = document.querySelector('.switch-button');
-        var switchBtnRight = document.querySelector('.switch-button-case.right');
-        var switchBtnLeft = document.querySelector('.switch-button-case.left');
-        var activeSwitch = document.querySelector('.active');
-        var container = document.getElementById("move-container");
-        var cLeft = document.getElementById("container-left");
-        var cRight = document.getElementById("container-right");
+        </div>
+      </div>
+    </div>
+
+    <div class="side-work">
+      <h3>? WANNA SEE a surprise ?</h3>
+      <div class="button">
+        <button class=".side-work" onclick="OpenSideWork()"><span>OPEN</span></button>
+      </div>
+    </div>
+    <div class="jervi">
+      <main>
+        <div>
+          <p data-text="Jervi">Jervi</p>
+        </div>
+      </main>
+    </div>
+
+    <!-- Modal   -->
+    <div id="modal" class="modal-container">
+      <div class="modal modal-target">
+        <div class="modal__content">
+          <div class="image">
+            <img :src="modal.image" alt="">
+          </div>
+          <div class="dots">
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+          </div>
+          <div class="details">
+            <div class="left">
+              <p class="title">{{modal.title}}</p>
+              <p class="date">{{modal.date}}</p>
+            </div>
+
+          </div>
+          <div class="tags">
+            <div class="tag" v-for="tag in modal.tags">
+              <p>{{ tag }}</p>
+            </div>
+          </div>
+          <div class="description" v-html="modal.description">
+          </div>
+          <div class="visit">
+            <a :href="modal.link" target="_blank"><button>Visit </button></a>
+          </div>
+
+        </div>
+      </div>
+      <div class="overlay" nth-modal="4" @click="closeProcessModal"></div>
+    </div>
+
+    <!--  Side Work   -->
+    <div class="modal-container">
+      <div class="modal " id="modal-side-work">
+        <div class="modal__content">
+          <div class="image">
+            <a href="./works/jervi_bike.gif" target="_blank">
+              <img src="./works/jervi_bike.gif" alt="">
+            </a>
+            <h3>I do have this Humor, But its valuable</h3>
+          </div>
+        </div>
+      </div>
+      <div class="overlay" onclick="CloseSideWork()"></div>
+    </div>
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#animationOnload',
+      methods: {
+        openMadeModal: function (id) {
+          id = id - 1;
+          this.modal.thumbnail = this.madeWorks[id].thumbnail;
+          this.modal.image = this.madeWorks[id].image;
+          this.modal.title = this.madeWorks[id].title;
+          this.modal.date = this.madeWorks[id].date;
+          this.modal.tags = this.madeWorks[id].tags;
+          this.modal.description = this.madeWorks[id].description;
+          this.modal.link = this.madeWorks[id].link;
+
+          var modal = document.getElementsByClassName('modal-target')[0];
+          modal.classList.add('modal--show');
+        },
+        openProcessModal: function (id) {
+          id = id - 1;
+          this.modal.thumbnail = this.processWorks[id].thumbnail;
+          this.modal.image = this.processWorks[id].image;
+          this.modal.title = this.processWorks[id].title;
+          this.modal.date = this.processWorks[id].date;
+          this.modal.tags = this.processWorks[id].tags;
+          this.modal.description = this.processWorks[id].description;
+          this.modal.link = this.processWorks[id].link;
+
+          var modal = document.getElementsByClassName('modal-target')[0];
+          modal.classList.add('modal--show');
+        },
+        closeProcessModal: function () {
+          var modal = document.getElementsByClassName('modal-target')[0];
+          modal.classList.remove('modal--show');
+        },
+      },
+      data: {
+        skills: {
+          0: {
+            name: 'In use',
+            tags: ['Laravel', 'React', '.', '.']
+          },
+          1: {
+            name: 'side used',
+            tags: ['React Native', 'Arduino', 'Figma', '.'],
+          },
+          2: {
+            name: 'In learning',
+            tags: ['Go', 'Tauri', 'Rust', '.'],
+          },
+        },
+        socials: {
+          'github': 'https://github.com/Jervi-sir',
+          'facebook': 'https://www.facebook.com/gacem.humen/',
+          'linkedin': 'https://www.linkedin.com/in/jervi-sir-84a74b1a2/',
+          'instagram': 'https://www.instagram.com/gacem_humen/',
+          'phone': ['tel:+213558054300', '(+213) 558 05 43 00'],
+          'email': ['mailto:gacembekhira@gmail.com', 'gacembekhira@gmail.com']
+        },
+        modal: {
+          thumbnail: '',
+          image: '',
+          title: '',
+          date: '',
+          tags: '',
+          description: '',
+          link: ''
+        },
+        madeWorks: [{
+          id: '1',
+          thumbnail: './works/tir/tir1_result.png',
+          image: './works/tir/tir1_result.png',
+          title: 'Tir - travel Agency',
+          date: '2020 - October',
+          tags: ['Laravel', 'Stripe', 'MySql', 'Bootstrap', 'mail', 'cart'],
+          description: 'Offering Hotel, Car renting, plane ticket purchase, Omra services<br> Comes with an online payment with STRIPE, and a reservation cart, similar idea with Shopping cart<br> you are able to<ul><li>sign in and log in</li><li>purchase an order</li><li>cancel possible reservations</li><li>save and print reservation\'s tickets</li><li>send emails</li><li>reset password</li><li></li></ul>To pay for an offre enter Stipe\'s code : 4242424242424242424242',
+          link: 'https://tir-agency-2kings.herokuapp.com/'
+        }, {
+          id: '2',
+          thumbnail: './works/saav/saav1_result.png',
+          image: './works/saav/saav1_result.png',
+          title: 'SaavyWorld-official',
+          date: '2020 - October',
+          tags: ['Laravel', 'MySql', 'MailChimp', 'Bootstrap', 'Hosted'],
+          description: 'Saav, rapper and an artist based in NYC, aimed to give a push for his brand,<br> a place where he can provide his latest work and updates<br> Available Section<ul><li>Main</li><li>Music</li><li>Merch</li><li>Visuals</li><li>Art</li></ul>',
+          link: 'https://saavyworld.com/'
+        }, {
+          id: '3',
+          thumbnail: './works/portfolio/jervi2_result.png',
+          image: './works/portfolio/jervi2_result.png',
+          title: 'Jervi --',
+          date: '2021 - March',
+          tags: ['pure', 'css', 'js'],
+          description: 'No description,<br> Made with only CSS, and Paralax<br> Remark: template isn\'t responsive',
+          link: 'https://jervi.netlify.app'
+        }, {
+          id: '4',
+          thumbnail: './works/hunt digits/hunt digits.png',
+          image: './works/hunt digits/hunt digits.png',
+          title: 'Hunt digits',
+          date: '2021 - Sptember',
+          tags: ['vuejs', 'Nodejs', 'webscrape'],
+          description: 'hunt best prices,',
+          link: 'https://hunt-digits.herokuapp.com/'
+        }, {
+          id: '5',
+          thumbnail: './works/2kings/2kings.png',
+          image: './works/2kings/2kings.png',
+          title: '2Kings',
+          date: '2021 - September',
+          tags: ['pure', 'js', 'CSS'],
+          description: 'My company landing page,',
+          link: 'https://2kings-websites.netlify.app/'
+        }, {
+          id: '6',
+          thumbnail: './works/o2dz/o2dz.png',
+          image: './works/o2dz/o2dz.png',
+          title: 'O2dz',
+          date: '2021 - August',
+          tags: ['Laravel'],
+          description: 'where to find and propose oxygen (deleted db),',
+          link: 'https://o2dz.com/'
+        }, {
+          id: '7',
+          thumbnail: './works/atlas/atlas_club.png',
+          image: './works/atlas/atlas_club.png',
+          title: 'Atlas registration',
+          date: '2021 - September',
+          tags: ['pure', 'netlify'],
+          description: 'form registration for atlas,',
+          link: 'https://atlas-club.netlify.app/'
+        }, {
+          id: '8',
+          thumbnail: './works/passwordStorage/password_storage.png',
+          image: './works/passwordStorage/password_storage.png',
+          title: 'Password Storage',
+          date: '2021 - September',
+          tags: ['Laravel', 'Tailwind'],
+          description: 'Platform to store your password, but dont use it, even it comes with authentication roles, but still no trust in me',
+          link: 'http://pssd-strg.herokuapp.com/'
+        },
+
+        ],
+        processWorks: [{
+          id: '1',
+          thumbnail: './works/portfolio/jerviV2_result.png',
+          image: './works/portfolio/jerviV2_result.png',
+          title: 'Current Portfolio',
+          date: '2021 - April',
+          tags: ['pure', 'css', 'js'],
+          description: 'Made with only CSS, wanted to try synthwave approiche, Currently m using it as a portfolio<br> next steps to cover<ul><li>Use vuejs to make it dynamic with a json datebase [done]</li><li>send email with nelify [done]</li><li>make a racing game maybe</li><li>maybe animate the road</li></ul>',
+          link: 'https://gacem.netlify.app'
+        }, {
+          id: '2',
+          thumbnail: './works/portfolio/portfolio1_result.png',
+          image: './works/portfolio/portfolio1_result.png',
+          title: 'Porfolio for software',
+          date: '2021 - March',
+          tags: ['vueJs'],
+          description: 'in process',
+          link: 'https://portfolio-gacem.netlify.app'
+        }, {
+          id: '3',
+          thumbnail: './works/devchallenges/res.png',
+          image: './works/devchallenges/res.png',
+          title: 'Collection of 60 webpages',
+          date: '2021 - April',
+          tags: ['pure', 'css', 'js'],
+          description: 'trying to finish lot amount of websites projects provided by <a href="devchallenges.io">DevChallenges.io </a>,<br> this platform\'s challenges cover from front-end to back-end, aiming to turn a beginer developpers to more experinced with real world projects.',
+          link: ''
+        }, {
+          id: '4',
+          thumbnail: './works/inProcess/catApp.png',
+          image: './works/inProcess/catApp.png',
+          title: 'cat App wit ha plot twist',
+          date: 'InProcess__',
+          tags: ['Laravel', 'Vuejs', 'api'],
+          description: 'No description',
+          link: ''
+        }, {
+          id: '5',
+          thumbnail: './works/inProcess/taxi.png',
+          image: './works/portfolio/jervi2_result.png',
+          title: 'Taxi trip Organizer Covid',
+          date: 'Canceled__',
+          tags: ['Laravel', 'api'],
+          description: 'wanted to solve issue with ppl who cannot find taxi between wilayat, during covid<br> enforently the project was canceled due to the situation has been changed, and motivation ra7t',
+          link: ''
+        }, {
+          id: '6',
+          thumbnail: './works/resvona/boxy.png',
+          image: './works/resvona/boxy.png',
+          title: 'Resvona Boxy',
+          date: '2021 - October',
+          tags: ['vuejs', 'Laravel', 'api'],
+          description: 'Connect peoples,',
+          link: 'https://boxydz.netlify.app'
+        }, {
+          id: '7',
+          thumbnail: './works/best price/best price.png',
+          image: './works/best price/best price.png',
+          title: 'Bst prices',
+          date: '2021 - September',
+          tags: ['pure', 'front only'],
+          description: 'Hunt the best prices,',
+          link: 'https://best-price.netlify.app'
+        }, {
+          id: '8',
+          thumbnail: './works/toks/toks.png',
+          image: './works/toks/toks.png',
+          title: 'toks platform',
+          date: '2021 - September',
+          tags: ['laravel', 'payment'],
+          description: 'Platform where you can buy toks courses,',
+          link: 'https://tradertoks.herokuapp.com/'
+        }, {
+          id: '9',
+          thumbnail: './works/forum/main.png',
+          image: './works/forum/main.png',
+          title: 'dev platform',
+          date: '2021 - September',
+          tags: ['laravel', 'payment'],
+          description: 'Platform of devs,',
+          link: 'https://dev-1954.herokuapp.com/'
+        }, {
+          id: '10',
+          thumbnail: './works/forum/main.png',
+          image: './works/forum/main.png',
+          title: 'Platform where to buy tickets, and sell them too as an agency',
+          date: 'in process',
+          tags: ['laravel', 'payment dz', 'purest html css'],
+          description: 'Aratiki,',
+          link: '#'
+        },
+
+        ]
+      }
+    })
+  </script>
+
+  <script>
+    'use strict';
+
+    var switchButton = document.querySelector('.switch-button');
+    var switchBtnRight = document.querySelector('.switch-button-case.right');
+    var switchBtnLeft = document.querySelector('.switch-button-case.left');
+    var activeSwitch = document.querySelector('.active');
+    var container = document.getElementById("move-container");
+    var cLeft = document.getElementById("container-left");
+    var cRight = document.getElementById("container-right");
 
 
-        function switchLeft() {
-            switchBtnRight.classList.remove('active-case');
-            switchBtnLeft.classList.add('active-case');
-            activeSwitch.style.left = '0%';
-            container.classList.remove("translate-right");
-            container.classList.add("translate-left");
+    function switchLeft() {
+      switchBtnRight.classList.remove('active-case');
+      switchBtnLeft.classList.add('active-case');
+      activeSwitch.style.left = '0%';
+      container.classList.remove("translate-right");
+      container.classList.add("translate-left");
 
-            cRight.classList.remove("container-hide");
-            cLeft.classList.add("container-hide");
+      cRight.classList.remove("container-hide");
+      cLeft.classList.add("container-hide");
 
 
-        }
+    }
 
-        function switchRight() {
-            switchBtnRight.classList.add('active-case');
-            switchBtnLeft.classList.remove('active-case');
-            activeSwitch.style.left = '50%';
-            container.classList.remove("translate-left");
-            container.classList.add("translate-right");
+    function switchRight() {
+      switchBtnRight.classList.add('active-case');
+      switchBtnLeft.classList.remove('active-case');
+      activeSwitch.style.left = '50%';
+      container.classList.remove("translate-left");
+      container.classList.add("translate-right");
 
-            cRight.classList.add("container-hide");
-            cLeft.classList.remove("container-hide");
+      cRight.classList.add("container-hide");
+      cLeft.classList.remove("container-hide");
 
-        }
+    }
 
-        switchBtnLeft.addEventListener('click', function() {
-            switchLeft();
-        }, false);
+    switchBtnLeft.addEventListener('click', function () {
+      switchLeft();
+    }, false);
 
-        switchBtnRight.addEventListener('click', function() {
-            switchRight();
-        }, false);
-    </script>
-    <script>
-        function shake() {
-            document.getElementById("shake-btn").classList.add("shake");
-            setTimeout(function() {
-                document.getElementById("shake-btn").classList.remove("shake");
-            }, 3000);
-        }
+    switchBtnRight.addEventListener('click', function () {
+      switchRight();
+    }, false);
+  </script>
+  <script>
+    function shake() {
+      document.getElementById("shake-btn").classList.add("shake");
+      setTimeout(function () {
+        document.getElementById("shake-btn").classList.remove("shake");
+      }, 3000);
+    }
 
-        function closeMadeModal(d) {
-            var modals = document.getElementsByClassName('modal-left');
-            var index = d.getAttribute("nth-modal");
-            var modal = modals[index];
-            modal.classList.remove('modal--show');
-        }
+    function closeMadeModal(d) {
+      var modals = document.getElementsByClassName('modal-left');
+      var index = d.getAttribute("nth-modal");
+      var modal = modals[index];
+      modal.classList.remove('modal--show');
+    }
 
-        function openProcessModal(d) {
-            var modals = document.getElementsByClassName('modal-right');
-            var index = d.getAttribute("nth-card");
-            var modal = modals[index]
-            modal.classList.add('modal--show');
-            openedModal = index;
-        }
+    function openProcessModal(d) {
+      var modals = document.getElementsByClassName('modal-right');
+      var index = d.getAttribute("nth-card");
+      var modal = modals[index]
+      modal.classList.add('modal--show');
+      openedModal = index;
+    }
 
-        function closeProcessModal(d) {
-            var modals = document.getElementsByClassName('modal-right');
-            var index = d.getAttribute("nth-modal");
-            var modal = modals[index];
-            modal.classList.remove('modal--show');
-        }
+    function closeProcessModal(d) {
+      var modals = document.getElementsByClassName('modal-right');
+      var index = d.getAttribute("nth-modal");
+      var modal = modals[index];
+      modal.classList.remove('modal--show');
+    }
 
-        function OpenSideWork() {
-            var modal = document.getElementById('modal-side-work');
-            modal.classList.add('modal--show');
-        }
+    function OpenSideWork() {
+      var modal = document.getElementById('modal-side-work');
+      modal.classList.add('modal--show');
+    }
 
-        function CloseSideWork() {
-            var modal = document.getElementById('modal-side-work');
-            modal.classList.remove('modal--show');
-        }
-    </script>
-    <script>
-        function contact() {
-            var contact = document.getElementById("contactMe");
-            contact.classList.remove("hide-contact");
-            contact.classList.add("show-contact");
+    function CloseSideWork() {
+      var modal = document.getElementById('modal-side-work');
+      modal.classList.remove('modal--show');
+    }
+  </script>
+  <script>
+    function contact() {
+      var contact = document.getElementById("contactMe");
+      contact.classList.remove("hide-contact");
+      contact.classList.add("show-contact");
 
-            var contactForm = document.getElementById("form-contact").children;
+      var contactForm = document.getElementById("form-contact").children;
 
-            for (var i = 0; i < contactForm.length; i += 2) {
-                var temp = contactForm[i];
-                var temp1 = contactForm[i + 1];
+      for (var i = 0; i < contactForm.length; i += 2) {
+        var temp = contactForm[i];
+        var temp1 = contactForm[i + 1];
 
-                temp.classList.add('right-to-left');
-                temp1.classList.add('left-to-right');
+        temp.classList.add('right-to-left');
+        temp1.classList.add('left-to-right');
 
-            }
-        }
-    </script>
+      }
+    }
+  </script>
 
-    <script>
-        function SmoothVerticalScrolling(e, time, where) {
-            var eTop = e.getBoundingClientRect().top;
-            var eAmt = eTop / 100;
-            var curTime = 0;
-            while (curTime <= time) {
-                window.setTimeout(SVS_B, curTime, eAmt, where);
-                curTime += time / 100;
-            }
-        }
+  <script>
+    function SmoothVerticalScrolling(e, time, where) {
+      var eTop = e.getBoundingClientRect().top;
+      var eAmt = eTop / 100;
+      var curTime = 0;
+      while (curTime <= time) {
+        window.setTimeout(SVS_B, curTime, eAmt, where);
+        curTime += time / 100;
+      }
+    }
 
-        function SVS_B(eAmt, where) {
-            if (where == "center" || where == "")
-                window.scrollBy(0, eAmt / 2);
-            if (where == "top")
-                window.scrollBy(0, eAmt);
-        }
-    </script>
+    function SVS_B(eAmt, where) {
+      if (where == "center" || where == "")
+        window.scrollBy(0, eAmt / 2);
+      if (where == "top")
+        window.scrollBy(0, eAmt);
+    }
+  </script>
 
 </body>
 
