@@ -1262,9 +1262,9 @@ main div p:after {
     .profile-detail h1 {
         font-size: 2.7rem;
     }
-    .profile-detail .contact-btn {
+    /* .profile-detail .contact-btn {
         align-items: unset;
-    }
+    } */
     .skills {
         margin-top: 2rem;
     }
