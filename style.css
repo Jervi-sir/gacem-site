@@ -99,7 +99,7 @@ body {
     margin: auto;
     margin-top: 3rem;
     background: var(--bg-color);
-    animation: 1.5s ease-out 0s 1 shawodAnimate;
+    /* animation: 1.5s ease-out 0s 1 shawodAnimate; */
 }
 
 .socials {
@@ -356,6 +356,16 @@ body {
     background: #ece8e1;
 }
 
+.contact-btn .contact-btn-icon {
+    width: 30px;
+    height: 30px;
+    filter: invert(0%); /* Black by default */
+    transition: filter 0.3s ease; /* Smooth transition for hover */
+}
+
+.contact-btn a:hover .contact-btn-icon {
+    filter: invert(100%); /* White on hover */
+}
 
 /*   Skills    */
 

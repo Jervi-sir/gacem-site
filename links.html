@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <link rel="icon" href="./sunset.gif" type="image/gif">
+
+  <title>Jervi</title>
+</head>
+
+<body>
+  <div class="graph"></div>
+
+  <div class="sunset">
+    <img src="./sunset.gif" alt="">
+  </div>
+  <div class="body" id="animationOnload">
+    <!--  Profile  -->
+    <div class="profile">
+      <div class="image">
+        <img src="./1.png">
+      </div>
+      <div class="name">
+        <p>Gacem</p>
+        <span>aka Jervi</span>
+      </div>
+    </div>
+
+    <!--  Details  -->
+    <div class="profile-detail">
+      <div class="right" style="width: 100%">
+        <div class="contact-btn" v-for="button in buttons" :key="button.id">
+          <a class="white" :href="button.href" target="_blank">
+            <p>
+              <span class="bg"></span>
+              <span class="base"></span>
+              <span class="text" style="display: flex; align-items: center; justify-content: center; gap: 6px;">
+                <img v-show="button.iconSrc" :src="button.iconSrc" class="contact-btn-icon" />
+                {{ button.text }}
+              </span>
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-work">
+      <h3>? WANNA SEE a surprise ?</h3>
+      <div class="button">
+        <button class=".side-work" onclick="OpenSideWork()"><span>OPEN</span></button>
+      </div>
+    </div>
+
+    <div class="jervi">
+      <main>
+        <div>
+          <p data-text="Jervi">Jervi</p>
+        </div>
+      </main>
+    </div>
+
+    <!--  Side Work  -->
+    <div class="modal-container">
+      <div class="modal " id="modal-side-work">
+        <div class="modal__content">
+          <div class="image">
+            <a href="./works/jervi_bike.gif" target="_blank">
+              <img src="./works/jervi_bike.gif" alt="">
+            </a>
+            <h3>I do have this Humor, But its valuable</h3>
+          </div>
+        </div>
+      </div>
+      <div class="overlay" onclick="CloseSideWork()"></div>
+    </div>
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#animationOnload',
+      methods: { },
+      data: {
+        buttons: [
+          {
+            id: 3,
+            href: 'https://github.com/Jervi-sir',
+            text: 'GitHub',
+            iconSrc: './icon/github.svg'
+          },
+          {
+            id: 4,
+            href: 'https://www.instagram.com/gacem_humen/',
+            text: 'Instagram',
+            iconSrc: './icon/instagram.svg'
+          },
+          {
+            id: 5,
+            href: 'https://www.linkedin.com/in/gacem-bekhira/',
+            text: 'LinkedIn',
+            iconSrc: './icon/linkedin.svg'
+          },
+          {
+            id: 6,
+            href: 'https://www.tiktok.com/@what_jervi_thinks_of_dz',
+            text: 'TikTok',
+            iconSrc: './icon/tiktok.svg'
+          },
+          {
+            id: 1,
+            href: 'https://discord.gg/pDQAfVdUZm',
+            text: 'Discord',
+            iconSrc: './icon/discord.svg'
+          },
+          {
+            id: 2,
+            href: 'https://gacem.netlify.app',
+            text: 'Portfolio',
+          },
+          {
+            id: 2,
+            href: 'https://jervi.netlify.app',
+            text: 'Jervi',
+          },
+         
+        ],
+      }
+    })
+  </script>
+
+  <script>
+    function OpenSideWork() {
+      var modal = document.getElementById('modal-side-work');
+      modal.classList.add('modal--show');
+    }
+
+    function CloseSideWork() {
+      var modal = document.getElementById('modal-side-work');
+      modal.classList.remove('modal--show');
+    }
+  </script>
+
+  <script>
+    function SmoothVerticalScrolling(e, time, where) {
+      var eTop = e.getBoundingClientRect().top;
+      var eAmt = eTop / 100;
+      var curTime = 0;
+      while (curTime <= time) {
+        window.setTimeout(SVS_B, curTime, eAmt, where);
+        curTime += time / 100;
+      }
+    }
+
+    function SVS_B(eAmt, where) {
+      if (where == "center" || where == "")
+        window.scrollBy(0, eAmt / 2);
+      if (where == "top")
+        window.scrollBy(0, eAmt);
+    }
+  </script>
+</body>
+</html>
