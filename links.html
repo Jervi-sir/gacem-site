@@ -12,6 +12,37 @@
   <link rel="icon" href="./sunset.gif" type="image/gif">
 
   <title>Jervi</title>
+
+  <!-- In-App Browser Redirect Script -->
+  <script>
+    (function () {
+      const ua = navigator.userAgent.toLowerCase();
+      const isIOS = /iphone|ipad|ipod/.test(ua);
+      const isAndroid = /android/.test(ua);
+      const isInAppBrowser = (
+        ua.includes('instagram') ||
+        ua.includes('fban') || ua.includes('fbav') || // Facebook
+        ua.includes('twitter') || // Twitter/X
+        ua.includes('tiktok') || // TikTok
+        ua.includes('wv') || // Generic WebView indicator
+        (ua.includes('safari') === false && ua.includes('chrome') === false && ua.includes('firefox') === false)
+      );
+
+      if (isInAppBrowser) {
+        const currentUrl = window.location.href;
+        let externalUrl = currentUrl;
+
+        if (isIOS) {
+          externalUrl = 'x-safari-' + currentUrl;
+        } else if (isAndroid) {
+          externalUrl = currentUrl;
+        }
+
+        window.location.href = externalUrl;
+      }
+    })();
+  </script>
+
 </head>
 
 <body>
@@ -84,10 +115,10 @@
   <script>
     var app = new Vue({
       el: '#animationOnload',
-      methods: { },
+      methods: {},
       data: {
         buttons: [
-           {
+          {
             id: 1,
             href: 'https://discord.gg/pDQAfVdUZm',
             text: 'Discord',
@@ -127,7 +158,7 @@
             href: 'https://jervi.netlify.app',
             text: 'Jervi',
           },
-         
+
         ],
       }
     })
@@ -164,4 +195,5 @@
     }
   </script>
 </body>
+
 </html>
