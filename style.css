@@ -99,7 +99,7 @@ body {
     margin: auto;
     margin-top: 3rem;
     background: var(--bg-color);
-    /* animation: 1.5s ease-out 0s 1 shawodAnimate; */
+    animation: 1.5s ease-out 0s 1 shawodAnimate;
 }
 
 .socials {
